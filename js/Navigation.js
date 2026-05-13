@@ -27,18 +27,18 @@ export class Navigation {
     updateActiveLink(path) {
         const links = document.querySelectorAll('nav a, [data-mobile-menu] a');
         
-        // Normaliza o path: remove barras, subpastas e extensões para comparação
-        let normalizedPath = path.split('/').pop() || 'index.html';
-        if (normalizedPath && !normalizedPath.includes('.')) {
-            normalizedPath += '.html';
-        }
+        // Normaliza o path: pega apenas o nome final (sem .html e sem barras)
+        let normalizedPath = path.split('/').pop() || 'index';
+        normalizedPath = normalizedPath.replace('.html', '');
         
         links.forEach(link => {
-            const href = link.getAttribute('href');
+            let href = link.getAttribute('href') || '';
+            href = href.replace('.html', ''); // Garantia extra
+
             link.classList.remove('text-primary', 'dark:text-primary-fixed', 'font-semibold', 'border-b-2', 'border-primary');
             link.classList.add('text-secondary', 'dark:text-secondary-fixed');
 
-            if (href === normalizedPath) {
+            if (href === normalizedPath || (normalizedPath === 'index' && href === 'index')) {
                 link.classList.add('text-primary', 'dark:text-primary-fixed', 'font-semibold', 'border-b-2', 'border-primary');
                 link.classList.remove('text-secondary', 'dark:text-secondary-fixed');
             }
