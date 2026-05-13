@@ -41,14 +41,14 @@ body {
 
 /* Mobile Menu Animation & Glassmorphism */
 .glass-effect {
-    background: rgba(251, 248, 255, 0.8) !important; /* Cor Surface com 80% opacidade */
-    backdrop-filter: blur(20px) saturate(180%) !important;
-    -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
-    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(251, 248, 255, 0.4) !important; /* Opacidade bem baixa para o vidro brilhar */
+    backdrop-filter: blur(40px) saturate(200%) !important;
+    -webkit-backdrop-filter: blur(40px) saturate(200%) !important;
+    border-left: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 .dark .glass-effect {
-    background: rgba(217, 217, 231, 0.8) !important; /* Cor Surface-dim com 80% opacidade */
+    background: rgba(25, 27, 37, 0.4) !important; /* Opacidade baixa no dark mode também */
     border-left: 1px solid rgba(255, 255, 255, 0.1);
 }
 
