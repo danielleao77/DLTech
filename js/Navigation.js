@@ -50,19 +50,26 @@ export class Navigation {
         
         if (this.isOpen) {
             this.mobileMenu.classList.remove('hidden');
-            // Timeout pequeno para permitir que o navegador registre a remoção do hidden antes da animação
             setTimeout(() => this.mobileMenu.classList.add('active'), 10);
             this.menuToggle.classList.add('active');
             this.menuToggle.querySelector('span').textContent = 'close';
             document.body.classList.add('menu-open');
+            // Torna o header transparente para o menu brilhar
+            this.header.classList.add('bg-transparent');
+            this.header.classList.remove('backdrop-blur-md', 'bg-surface/80', 'dark:bg-surface-dim/80');
         } else {
             this.mobileMenu.classList.remove('active');
             this.menuToggle.classList.remove('active');
             this.menuToggle.querySelector('span').textContent = 'menu';
             document.body.classList.remove('menu-open');
-            // Aguarda a animação terminar antes de esconder com hidden
+            // Restaura o header
+            this.header.classList.remove('bg-transparent');
+            this.handleScroll(); // Recalcula o estado do scroll
             setTimeout(() => {
-                if (!this.isOpen) this.mobileMenu.classList.add('hidden');
+                if (!this.isOpen) {
+                    this.mobileMenu.classList.add('hidden');
+                    this.header.classList.add('backdrop-blur-md');
+                }
             }, 400);
         }
     }
