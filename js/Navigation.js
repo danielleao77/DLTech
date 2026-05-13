@@ -32,15 +32,21 @@ export class Navigation {
         normalizedPath = normalizedPath.replace('.html', '');
         
         links.forEach(link => {
+            const isMobileLink = link.closest('[data-mobile-menu]');
             let href = link.getAttribute('href') || '';
-            href = href.replace('.html', ''); // Garantia extra
+            href = href.replace('.html', '');
 
             link.classList.remove('text-primary', 'dark:text-primary-fixed', 'font-semibold', 'border-b-2', 'border-primary');
             link.classList.add('text-secondary', 'dark:text-secondary-fixed');
 
             if (href === normalizedPath || (normalizedPath === 'index' && href === 'index')) {
-                link.classList.add('text-primary', 'dark:text-primary-fixed', 'font-semibold', 'border-b-2', 'border-primary');
+                link.classList.add('text-primary', 'dark:text-primary-fixed', 'font-semibold');
                 link.classList.remove('text-secondary', 'dark:text-secondary-fixed');
+                
+                // Só adiciona a borda se NÃO for link do menu mobile
+                if (!isMobileLink) {
+                    link.classList.add('border-b-2', 'border-primary');
+                }
             }
         });
     }
