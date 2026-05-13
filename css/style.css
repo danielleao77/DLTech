@@ -39,19 +39,31 @@ body {
     100% { transform: translateX(300%); }
 }
 
-/* Mobile Menu Animation */
+/* Mobile Menu Animation & Glassmorphism */
+.glass-effect {
+    background: rgba(251, 248, 255, 0.8) !important; /* Cor Surface com 80% opacidade */
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.dark .glass-effect {
+    background: rgba(217, 217, 231, 0.8) !important; /* Cor Surface-dim com 80% opacidade */
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 [data-mobile-menu] {
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
     opacity: 0;
     pointer-events: none;
-    transform: translateX(100%); /* Começa fora da tela à direita */
+    transform: translateX(100%);
 }
 
 [data-mobile-menu].active {
     display: flex !important;
     opacity: 1;
     pointer-events: auto;
-    transform: translateX(0); /* Desliza para dentro */
+    transform: translateX(0);
 }
 
 /* Background blur when menu is open */
