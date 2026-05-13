@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Portfolio - DL Tech</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="js/config.js"></script>
+<script type="module" src="js/main.js"></script>
+<link href="css/style.css" rel="stylesheet"/>
+
+</head>
+<body class="bg-background text-on-background font-body-md antialiased pt-20">
+<!-- TopNavBar -->
+<nav class="bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md fixed top-0 w-full z-50 transition-all duration-300 ease-in-out">
+<div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-container-max-width mx-auto">
+<a class="text-headline-md font-headline-md font-bold tracking-tighter text-on-surface dark:text-on-surface-variant hover:translate-y-[-2px] transition-transform duration-300" href="index.html">
+                DL Tech
+            </a>
+<div class="hidden md:flex items-center space-x-8 font-body-md text-body-md">
+<a class="text-secondary dark:text-secondary-fixed hover:text-primary dark:hover:text-primary-fixed transition-colors" href="services.html">Services</a>
+<a class="text-primary dark:text-primary-fixed font-semibold border-b-2 border-primary" href="portfolio.html">Portfolio</a>
+<a class="text-secondary dark:text-secondary-fixed hover:text-primary dark:hover:text-primary-fixed transition-colors" href="contact.html">Contact</a>
+
+</div>
+<div class="flex items-center gap-4">
+<a href="contact.html" class="bg-primary-container text-on-primary hover:translate-y-[-2px] transition-transform duration-300 shadow-[0px_10px_30px_rgba(0,0,0,0.04)] hover:shadow-md px-6 py-3 rounded font-label-sm uppercase tracking-wider hidden md:block text-center">
+                Get in Touch
+            </a>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-on-surface p-2" data-menu-toggle>
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+<!-- Mobile Menu -->
+<div class="hidden fixed inset-0 z-40 bg-surface dark:bg-surface-dim flex-col items-center justify-center gap-8 pt-20" data-mobile-menu>
+<a class="text-headline-md font-headline-md text-on-surface" href="services.html">Services</a>
+<a class="text-headline-md font-headline-md text-on-surface" href="portfolio.html">Portfolio</a>
+<a class="text-headline-md font-headline-md text-on-surface" href="contact.html">Contact</a>
+<a href="contact.html" class="bg-primary-container text-on-primary px-8 py-4 rounded font-label-sm uppercase mt-8">
+        Get in Touch
+    </a>
+</div>
+</nav>
+<main class="min-h-screen">
+<!-- Hero Section -->
+<section class="py-section-padding px-margin-mobile md:px-margin-desktop max-w-container-max-width mx-auto">
+<div class="max-w-3xl">
+<h1 class="font-display-lg text-display-lg text-on-surface mb-6">Engineered Elegance.</h1>
+<p class="font-body-lg text-body-lg text-secondary mb-10">A curated selection of high-performance digital products, enterprise platforms, and brand experiences built with precision.</p>
+</div>
+<!-- Performance Indicator Decor -->
+<div class="w-24 h-[2px] bg-outline-variant relative overflow-hidden">
+<div class="absolute top-0 left-0 h-full bg-primary-container w-1/3 animate-[pulse_2s_ease-in-out_infinite]"></div>
+</div>
+</section>
+<!-- Portfolio Grid -->
+<section class="pb-section-padding px-margin-mobile md:px-margin-desktop max-w-container-max-width mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Project Card 1 -->
+<article class="group relative bg-surface-container-lowest rounded-DEFAULT shadow-[0px_10px_30px_rgba(0,0,0,0.04)] hover:shadow-[0px_20px_40px_rgba(0,0,0,0.08)] transition-all duration-300 overflow-hidden md:col-span-2 flex flex-col md:flex-row">
+<div class="md:w-1/2 aspect-video md:aspect-auto overflow-hidden">
+<img alt="Fintech Dashboard" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A sleek, modern dashboard interface displayed on a high-end laptop sitting on a minimalist white desk. The lighting is bright and even, highlighting the clean lines of the hardware and the crisp geometric layout of the software UI. Subtle blue accents on the screen reflect the brand's primary color, contrasting elegantly with deep blacks and bright whites. The overall mood is highly professional, technical, and precise." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_QhLLGqoJTY55CMBxyGY1lJj-jFBK8-At9xfgpnuFJtJWhnz30g-A4V5G5QJzIzB77hC4EGusECKUGl9g2CcUpCnYk3HIo9IggPtg15ue3DUzJxMYwx00PJJxuiWYv6paAnBTadSzHmZuA1xEDHdsKSnEIQ6VHfyivpmmWzuOvip5qU60fHYg2pCWcoFz5OJObHaZmeKlzbelbmfjKG1tzbWWsklXsidYIq0-OOSuxadiBJVNpwq1AwGQI3P1Hp09dFsAVT0MVTXF"/>
+</div>
+<div class="p-8 md:p-12 md:w-1/2 flex flex-col justify-center bg-surface-container-lowest">
+<div class="flex gap-2 mb-4 flex-wrap">
+<span class="bg-surface px-3 py-1 rounded font-label-sm text-label-sm text-on-surface">Fintech</span>
+<span class="bg-surface px-3 py-1 rounded font-label-sm text-label-sm text-on-surface">React</span>
+<span class="bg-surface px-3 py-1 rounded font-label-sm text-label-sm text-on-surface">Node.js</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-4 group-hover:text-primary transition-colors">Nova Financial Platform</h2>
+<p class="font-body-md text-body-md text-secondary mb-8">An enterprise-grade trading platform engineered for microsecond latency. We rebuilt the core architecture and redesigned the interface for high-volume traders.</p>
+<a class="inline-flex items-center text-primary font-label-sm uppercase tracking-wider group-hover:translate-x-2 transition-transform" href="#">
+                            View Case Study
+                            <span class="material-symbols-outlined ml-2 text-[18px]">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- Project Card 2 -->
+<article class="group relative bg-surface-container-lowest rounded-DEFAULT shadow-[0px_10px_30px_rgba(0,0,0,0.04)] hover:shadow-[0px_20px_40px_rgba(0,0,0,0.08)] transition-all duration-300 overflow-hidden flex flex-col">
+<div class="aspect-[4/3] overflow-hidden">
+<img alt="Data Visualization" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A sophisticated data visualization interface shown on a tablet device held by a person in a modern office environment. The screen displays complex graphs and metrics rendered with clean lines and a minimalist aesthetic. The lighting is soft and natural, emphasizing the pristine white surfaces and sharp digital details. The scene conveys innovation, high-tech engineering, and elegant design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgxROTzN66mT-6bG6yEVBbPayfRQfSDZUfNOthx9Ews8OpG7xs5SyihugYuvRG_gRsdizLJmX8AgP6cnqKK5XJg1yFzKmgQPAwYtJeZ0XFHknCfCLoZ_NCcARxlUeCAiUHfSfyWhpivth4w-mG-AiQS7tqe8jZcKyscfhf1DVz-zZ4dTpZsVW4iKQ-_0A_DihqCNG5AZ_3KnbRJf3s-lytsZuChc9mZOqtoleWxHIo-7TGKPphgafCNsHEqBkn0_uTJMcjNuKn354l"/>
+</div>
+<div class="p-8 flex flex-col flex-grow bg-surface-container-lowest">
+<div class="flex gap-2 mb-4 flex-wrap">
+<span class="bg-surface px-3 py-1 rounded font-label-sm text-label-sm text-on-surface">SaaS</span>
+<span class="bg-surface px-3 py-1 rounded font-label-sm text-label-sm text-on-surface">Vue.js</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-4">Metrics OS</h2>
+<p class="font-body-md text-body-md text-secondary mb-8 flex-grow">A real-time analytics engine processing millions of data points, presented through a clean, intuitive dashboard interface.</p>
+<a class="inline-flex items-center text-primary font-label-sm uppercase tracking-wider group-hover:translate-x-2 transition-transform mt-auto" href="#">
+                            View Case Study
+                            <span class="material-symbols-outlined ml-2 text-[18px]">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- Project Card 3 -->
+<article class="group relative bg-surface-container-lowest rounded-DEFAULT shadow-[0px_10px_30px_rgba(0,0,0,0.04)] hover:shadow-[0px_20px_40px_rgba(0,0,0,0.08)] transition-all duration-300 overflow-hidden flex flex-col">
+<div class="aspect-[4/3] overflow-hidden">
+<img alt="PropTech App" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A top-down view of a modern creative workspace with architectural blueprints and a mobile phone displaying a sleek property management app. The desk is a smooth, light-colored wood, and the lighting casts soft, diffused shadows. The app interface uses a clean, grid-based layout with sharp typography, reflecting an engineered elegance. The mood is collaborative, precise, and forward-thinking." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3Q0_FwU9LbR1U9bQmkBnmQqm1N-NTjATJv-Q4EHyF7oGnlzplorivPMO1LE8TyNt-BL_JfleV2FfDgos6Dhap95wxr7d_Egvsl8GR6O6rQjVhDDiCokvZHX7sAFHAvYgSqNCex38NOsZ-0eDXfMfXoEjpNn4FFTwqRtsWUERtsKqjwzN4W0ogJQHqk0ypla5Hpup4BRkzKeZfWj75mwm3hqzdUOu8tmB9s8_-_0TaJykupAyclmxxLt5Dujix144EkMtyhQuiR6QP"/>
+</div>
+<div class="p-8 flex flex-col flex-grow bg-surface-container-lowest">
+<div class="flex gap-2 mb-4 flex-wrap">
+<span class="bg-surface px-3 py-1 rounded font-label-sm text-label-sm text-on-surface">Mobile</span>
+<span class="bg-surface px-3 py-1 rounded font-label-sm text-label-sm text-on-surface">React Native</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-4">Aura Property</h2>
+<p class="font-body-md text-body-md text-secondary mb-8 flex-grow">A seamless mobile experience connecting high-end real estate agents with premium buyers, featuring immersive 3D tours.</p>
+<a class="inline-flex items-center text-primary font-label-sm uppercase tracking-wider group-hover:translate-x-2 transition-transform mt-auto" href="#">
+                            View Case Study
+                            <span class="material-symbols-outlined ml-2 text-[18px]">arrow_forward</span>
+</a>
+</div>
+</article>
+</div>
+<div class="mt-16 text-center">
+<button class="bg-transparent border border-[#101112] text-on-surface hover:bg-[#F8F9FA] transition-colors duration-300 px-8 py-4 rounded font-label-sm uppercase tracking-wider">
+                    Load More Projects
+                </button>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-section-padding px-margin-mobile md:px-margin-desktop max-w-container-max-width mx-auto text-center border-t border-outline-variant/30">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-6">Ready to scale your digital presence?</h2>
+<p class="font-body-lg text-body-lg text-secondary mb-10 max-w-2xl mx-auto">Partner with our engineering team to build scalable, high-performance applications that command attention.</p>
+<button class="bg-primary-container text-on-primary hover:translate-y-[-2px] transition-transform duration-300 shadow-[0px_10px_30px_rgba(0,0,0,0.04)] hover:shadow-md px-8 py-4 rounded font-label-sm uppercase tracking-wider inline-flex items-center">
+                Start a Conversation
+                <span class="material-symbols-outlined ml-2">east</span>
+</button>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface dark:bg-surface-dim font-label-sm text-label-sm w-full border-t border-outline-variant dark:border-outline">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter py-section-padding px-margin-mobile md:px-margin-desktop max-w-container-max-width mx-auto">
+<div>
+<div class="text-headline-md font-headline-md font-bold text-on-surface dark:text-on-surface-variant mb-4">
+                    DL Tech
+                </div>
+<p class="text-secondary dark:text-secondary-fixed">
+                    © 2024 DL Tech. Engineered Elegance.
+                </p>
+</div>
+<div class="flex flex-col md:flex-row md:justify-end gap-6 md:gap-8">
+<a class="text-secondary dark:text-secondary-fixed hover:text-primary dark:hover:text-primary-fixed transition-colors opacity-80 hover:opacity-100 transition-opacity" href="#">Privacy Policy</a>
+<a class="text-secondary dark:text-secondary-fixed hover:text-primary dark:hover:text-primary-fixed transition-colors opacity-80 hover:opacity-100 transition-opacity" href="#">Terms of Service</a>
+<a class="text-secondary dark:text-secondary-fixed hover:text-primary dark:hover:text-primary-fixed transition-colors opacity-80 hover:opacity-100 transition-opacity" href="#">Cookie Settings</a>
+<a class="text-secondary dark:text-secondary-fixed hover:text-primary dark:hover:text-primary-fixed transition-colors opacity-80 hover:opacity-100 transition-opacity" href="#">LinkedIn</a>
+<a class="text-secondary dark:text-secondary-fixed hover:text-primary dark:hover:text-primary-fixed transition-colors opacity-80 hover:opacity-100 transition-opacity" href="#">GitHub</a>
+</div>
+</div>
+</footer>
+</body></html>
