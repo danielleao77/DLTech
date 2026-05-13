@@ -38,3 +38,31 @@ body {
     0% { transform: translateX(-100%); }
     100% { transform: translateX(300%); }
 }
+
+/* Mobile Menu Animation */
+[data-mobile-menu] {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-20px);
+}
+
+[data-mobile-menu].active {
+    display: flex !important;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+/* Background blur when menu is open */
+.menu-open {
+    overflow: hidden;
+}
+
+[data-menu-toggle] span {
+    transition: transform 0.3s ease;
+}
+
+[data-menu-toggle].active span {
+    transform: rotate(90deg);
+}

@@ -50,14 +50,20 @@ export class Navigation {
         
         if (this.isOpen) {
             this.mobileMenu.classList.remove('hidden');
-            this.mobileMenu.classList.add('flex');
-            document.body.style.overflow = 'hidden';
-            this.menuToggle.innerHTML = '<span class="material-symbols-outlined">close</span>';
+            // Timeout pequeno para permitir que o navegador registre a remoção do hidden antes da animação
+            setTimeout(() => this.mobileMenu.classList.add('active'), 10);
+            this.menuToggle.classList.add('active');
+            this.menuToggle.querySelector('span').textContent = 'close';
+            document.body.classList.add('menu-open');
         } else {
-            this.mobileMenu.classList.add('hidden');
-            this.mobileMenu.classList.remove('flex');
-            document.body.style.overflow = '';
-            this.menuToggle.innerHTML = '<span class="material-symbols-outlined">menu</span>';
+            this.mobileMenu.classList.remove('active');
+            this.menuToggle.classList.remove('active');
+            this.menuToggle.querySelector('span').textContent = 'menu';
+            document.body.classList.remove('menu-open');
+            // Aguarda a animação terminar antes de esconder com hidden
+            setTimeout(() => {
+                if (!this.isOpen) this.mobileMenu.classList.add('hidden');
+            }, 400);
         }
     }
 
