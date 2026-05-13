@@ -39,7 +39,10 @@ export class Router {
     }
 
     async navigateTo(url) {
-        window.history.pushState({}, '', url);
+        // Remove .html da URL para exibição na barra de endereços (URL Amigável)
+        const cleanUrl = url.replace('index.html', '').replace('.html', '');
+        
+        window.history.pushState({}, '', cleanUrl || '/');
         await this.loadPage(url);
     }
 
