@@ -6,6 +6,8 @@ export class Router {
     constructor(app) {
         this.app = app;
         this.contentContainer = document.getElementById('page-content');
+        // Detecta a base do projeto (ex: /DLTech/)
+        this.basePath = window.location.pathname.includes('/DLTech/') ? '/DLTech/' : '/';
         this.init();
     }
 
@@ -15,7 +17,10 @@ export class Router {
             const link = e.target.closest('a');
             if (this.shouldIntercept(link)) {
                 e.preventDefault();
-                this.navigateTo(link.getAttribute('href'));
+                let href = link.getAttribute('href');
+                // Normaliza index.html para vazio para a home
+                if (href === 'index.html' || href === 'index') href = '';
+                this.navigateTo(href);
             }
         });
 
@@ -39,11 +44,14 @@ export class Router {
     }
 
     async navigateTo(url) {
-        // Remove .html da URL para exibição na barra de endereços (URL Amigável)
+        // Remove .html da URL para exibição na barra de endereços
         const cleanUrl = url.replace('index.html', '').replace('.html', '');
         
-        window.history.pushState({}, '', cleanUrl || '/');
-        await this.loadPage(url);
+        // Constrói a URL final respeitando o basePath
+        const finalUrl = this.basePath + cleanUrl;
+        
+        window.history.pushState({}, '', finalUrl);
+        await this.loadPage(cleanUrl || 'index');
     }
 
     async loadPage(url) {
