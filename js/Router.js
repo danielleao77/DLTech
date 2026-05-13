@@ -44,44 +44,47 @@ export class Router {
     }
 
     async loadPage(url) {
-        // Se a URL estiver vazia ou for apenas '/', assume index
-        const targetUrl = (url === '/' || url === '') ? 'index.html' : 
-                         (url.endsWith('.html') ? url : `${url}.html`);
+        // Normaliza a URL para encontrar o arquivo .html correspondente
+        let targetUrl = url;
+        
+        // Se for a raiz ou vazio, vai para index.html
+        if (url === '/' || url === '' || url.endsWith('/')) {
+            targetUrl = 'index.html';
+        } else if (!url.endsWith('.html')) {
+            targetUrl = url + '.html';
+        }
+
+        // Remove a barra inicial se existir para o fetch ser relativo à pasta atual
+        const fetchUrl = targetUrl.startsWith('/') ? targetUrl.substring(1) : targetUrl;
 
         try {
             // Efeito de saída
             this.contentContainer.classList.add('page-fade-out');
             await new Promise(r => setTimeout(r, 300));
 
-            const response = await fetch(targetUrl);
+            const response = await fetch(fetchUrl);
+            if (!response.ok) throw new Error('Falha ao carregar página');
+            
             const html = await response.text();
             
-            // Faz o parse do HTML recebido
             const parser = new DOMParser();
             const doc = parser.parseFromString(html, 'text/html');
             const newContent = doc.getElementById('page-content');
 
             if (newContent) {
-                // Atualiza o conteúdo
                 this.contentContainer.innerHTML = newContent.innerHTML;
-                
-                // Atualiza o título da página
                 document.title = doc.title;
-
-                // Scroll para o topo
                 window.scrollTo(0, 0);
 
-                // Efeito de entrada
                 this.contentContainer.classList.remove('page-fade-out');
                 this.contentContainer.classList.add('page-fade-in');
                 setTimeout(() => this.contentContainer.classList.remove('page-fade-in'), 400);
 
-                // Notifica o App para reinicializar componentes
-                this.app.onPageLoaded();
+                // Notifica o App para reinicializar componentes e atualizar navegação
+                this.app.onPageLoaded(targetUrl);
             }
         } catch (error) {
             console.error('Erro ao carregar página:', error);
-            // Fallback: recarrega a página normalmente se o fetch falhar
             window.location.href = url;
         }
     }

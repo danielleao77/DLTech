@@ -19,6 +19,28 @@ export class Navigation {
 
         window.addEventListener('scroll', () => this.handleScroll());
         this.handleScroll(); // Check initial scroll position
+        
+        // Inicializa o link ativo com base na URL atual
+        this.updateActiveLink(window.location.pathname);
+    }
+
+    updateActiveLink(path) {
+        const links = document.querySelectorAll('nav a, [data-mobile-menu] a');
+        const currentPath = path === '/' || path === '' ? 'index.html' : 
+                          (path.startsWith('/') ? path.substring(1) : path);
+        
+        links.forEach(link => {
+            const href = link.getAttribute('href');
+            // Remove as classes de ativo primeiro
+            link.classList.remove('text-primary', 'dark:text-primary-fixed', 'font-semibold', 'border-b-2', 'border-primary');
+            link.classList.add('text-secondary', 'dark:text-secondary-fixed');
+
+            // Verifica se o href do link corresponde ao path atual (considerando .html)
+            if (href === currentPath || (currentPath === 'index.html' && href === 'index.html')) {
+                link.classList.add('text-primary', 'dark:text-primary-fixed', 'font-semibold', 'border-b-2', 'border-primary');
+                link.classList.remove('text-secondary', 'dark:text-secondary-fixed');
+            }
+        });
     }
 
     toggleMenu() {

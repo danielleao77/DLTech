@@ -40,10 +40,15 @@ class App {
     /**
      * Chamado pelo Router sempre que uma nova página é carregada
      */
-    onPageLoaded() {
+    onPageLoaded(path) {
         // Reinicializa componentes que dependem do novo conteúdo do DOM
         this.initComponents();
         
+        // Atualiza o link ativo na navegação
+        if (this.components.navigation) {
+            this.components.navigation.updateActiveLink(path);
+        }
+
         // Se o menu mobile estava aberto, fecha ele
         if (this.components.navigation && this.components.navigation.isOpen) {
             this.components.navigation.toggleMenu();
