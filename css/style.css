@@ -1,91 +1,155 @@
-@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+/* CSS principal - Obsidian Tech SPA */
 
-.material-symbols-outlined {
-    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+
+:root {
+  --color-primary: #a78bfa;     /* Purple/Violet */
+  --color-secondary: #34d399;   /* Emerald Green */
+  --color-bg: #0b0f19;          /* Deep Obsidian Blue/Black */
+  --color-card-bg: rgba(15, 23, 42, 0.5); /* Slate 900 / 50% */
+  --color-border: rgba(51, 65, 85, 0.4);   /* Slate 700 / 40% */
 }
 
-/* Page Transitions */
-#page-content {
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-
-.page-fade-out {
-    opacity: 0;
-    transform: translateY(10px);
-}
-
-.page-fade-in {
-    animation: fadeIn 0.4s ease-out forwards;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Geist', sans-serif;
+  font-family: 'Geist', sans-serif;
+  background-color: var(--color-bg);
+  color: #f8fafc;
+  overflow-x: hidden;
 }
 
-@keyframes slide {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(300%); }
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-/* Mobile Menu Animation & Glassmorphism */
-.glass-effect {
-    background: rgba(251, 248, 255, 0.2) !important; /* Cristal Puro */
-    backdrop-filter: blur(40px) saturate(200%) !important;
-    -webkit-backdrop-filter: blur(40px) saturate(200%) !important;
-    border-left: 1px solid rgba(255, 255, 255, 0.2);
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
 }
 
-.dark .glass-effect {
-    background: rgba(25, 27, 37, 0.2) !important;
-    border-left: 1px solid rgba(255, 255, 255, 0.05);
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
 }
 
-[data-mobile-menu] {
-    position: fixed;
-    inset-y: 0;
-    right: 0;
-    height: 100%; /* Força altura total sempre */
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, visibility 0.4s;
-    opacity: 0;
-    visibility: hidden; /* Em vez de hidden (display none), usamos visibility */
-    pointer-events: none;
-    transform: translateX(100%);
-    z-index: 55;
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
 }
 
-[data-mobile-menu].active {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-    transform: translateX(0);
+/* Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
 }
 
-/* Background blur when menu is open */
-.menu-open {
-    overflow: hidden;
+@keyframes float-delayed {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(-5deg);
+  }
 }
 
-[data-menu-toggle] {
-    position: relative;
-    z-index: 60; /* Garante que o botão fique acima do menu deslizante */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.15;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(1.05);
+  }
 }
 
-[data-menu-toggle] span {
-    transition: transform 0.3s ease, color 0.3s ease;
+/* Custom Animation Classes */
+.animate-float-1 {
+  animation: float 8s ease-in-out infinite;
 }
 
-[data-menu-toggle].active span {
-    transform: rotate(180deg);
+.animate-float-2 {
+  animation: float-delayed 10s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 6s ease-in-out infinite;
+}
+
+/* Hover effects for Cards */
+.obsidian-card {
+  position: relative;
+  background: var(--color-card-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.obsidian-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary), transparent);
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.obsidian-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(167, 139, 250, 0.4);
+  box-shadow: 0 10px 30px -10px rgba(167, 139, 250, 0.15);
+}
+
+.obsidian-card:hover::before {
+  opacity: 0.5;
+}
+
+/* Intersection Observer Transitions */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-on-scroll.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Floating Labels Styling */
+.floating-label-group {
+  position: relative;
+}
+
+.floating-label-group input:placeholder-shown ~ label,
+.floating-label-group textarea:placeholder-shown ~ label {
+  top: 1rem;
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+.floating-label-group input:focus ~ label,
+.floating-label-group input:not(:placeholder-shown) ~ label,
+.floating-label-group textarea:focus ~ label,
+.floating-label-group textarea:not(:placeholder-shown) ~ label {
+  top: -0.5rem;
+  font-size: 0.75rem;
+  color: var(--color-primary);
+}
+
+.floating-label-group label {
+  position: absolute;
+  left: 0;
+  top: 1rem;
+  transition: all 0.2s ease-out;
+  pointer-events: none;
 }

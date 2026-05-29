@@ -1,194 +1,420 @@
 <!DOCTYPE html>
-
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<!-- Meta tags para evitar cache agressivo em desenvolvimento -->
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
-<meta http-equiv="Pragma" content="no-cache"/>
-<meta http-equiv="Expires" content="0"/>
-<title>DL Tech - Engineered Elegance</title>
-
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <script src="js/config.js?v=1.0.5"></script>
-    <script type="module" src="js/main.js?v=1.0.5"></script>
-    <link rel="stylesheet" href="css/style.css?v=1.0.5">
-
+<html class="dark scroll-smooth" lang="pt-BR">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>DL Tech — Precision in Darkness</title>
+    <meta name="description" content="DL Tech é uma agência de engenharia de software de elite. Desenvolvemos interfaces de alto desempenho com precisão milimétrica e design Obsidian moderno.">
+    <meta name="keywords" content="Software Agency, Web Development, Design Engineering, React, Node.js, Tailwind CSS, Dark Mode, UI/UX">
+    <meta name="author" content="DL Tech">
+    
+    <!-- Tailwind CSS & Plugins -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        slate: {
+                            950: "#0b0f19"
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts & Material Symbols -->
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    
+    <!-- Custom Style Sheet -->
+    <link href="css/style.css" rel="stylesheet"/>
 </head>
-<body class="bg-background text-on-background font-body-md text-body-md antialiased min-h-screen flex flex-col">
-<!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md transition-all duration-300 ease-in-out">
-<div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-container-max-width mx-auto">
-<a href="index" class="text-headline-md font-headline-md font-bold tracking-tighter text-on-surface dark:text-on-surface-variant hover:opacity-80 transition-opacity">
-                DL Tech
-            </a>
-<div class="hidden md:flex items-center gap-gutter">
-<a href="services">Services</a>
-<a href="portfolio">Portfolio</a>
-<a href="contact">Contact</a>
+<body class="bg-slate-950 text-slate-100 antialiased selection:bg-purple-600 selection:text-white">
 
-</div>
-<div class="flex items-center gap-4">
-<a href="contact" class="hidden md:inline-block bg-primary-container text-on-primary px-6 py-3 rounded-DEFAULT font-label-sm text-label-sm uppercase hover:-translate-y-[2px] transition-transform shadow-[0px_10px_30px_rgba(0,0,0,0.04)]">
-                Get in Touch
+    <!-- Header Navigation -->
+    <header class="fixed top-0 w-full z-50 transition-all duration-300 border-b border-transparent bg-transparent py-4 px-6 md:px-12 flex justify-between items-center" id="main-nav">
+        <div class="flex items-center gap-2 text-xl font-bold tracking-tighter text-white">
+            <span class="material-symbols-outlined text-purple-400" style="font-variation-settings: 'FILL' 1;">terminal</span>
+            <span>DL TECH</span>
+        </div>
+        
+        <nav class="hidden md:flex gap-8 items-center">
+            <a class="text-slate-400 hover:text-purple-400 transition-colors text-sm font-medium" href="#services">Serviços</a>
+            <a class="text-slate-400 hover:text-purple-400 transition-colors text-sm font-medium" href="#work">Portfólio</a>
+            <a class="text-slate-400 hover:text-purple-400 transition-colors text-sm font-medium" href="#contact">Contato</a>
+        </nav>
+        
+        <div class="hidden md:block">
+            <a href="#contact" class="px-5 py-2.5 bg-slate-900/50 hover:bg-slate-800 border border-slate-800 hover:border-purple-500/50 text-white rounded text-sm font-medium transition-all duration-300">
+                Iniciar Sequência
             </a>
-<button class="md:hidden text-on-surface p-2" data-menu-toggle>
-<span class="material-symbols-outlined">menu</span>
-</button>
-</div>
-</div>
-<!-- Mobile Menu (Side Slide-in) -->
-<div class="fixed inset-y-0 right-0 w-[85%] md:w-[400px] z-[55] glass-effect shadow-2xl flex flex-col items-start justify-start pt-32 px-margin-mobile" data-mobile-menu>
-<div class="flex flex-col gap-8 w-full">
-<a class="text-headline-md font-headline-md text-on-surface hover:text-primary transition-colors" href="index">Home</a>
-<a class="text-headline-md font-headline-md text-on-surface hover:text-primary transition-colors" href="services">Services</a>
-<a class="text-headline-md font-headline-md text-on-surface hover:text-primary transition-colors" href="portfolio">Portfolio</a>
-<a class="text-headline-md font-headline-md text-on-surface hover:text-primary transition-colors" href="contact">Contact</a>
-<div class="w-full h-px bg-outline-variant my-4"></div>
-<a href="contact" class="bg-primary-container text-on-primary px-8 py-4 rounded-full font-label-md text-label-md uppercase shadow-lg text-center w-full">
-            Get in Touch
+        </div>
+        
+        <!-- Burger Menu Button -->
+        <button class="md:hidden flex flex-col gap-1.5 justify-center items-center w-8 h-8 rounded border border-slate-800 bg-slate-900/30 p-1" id="mobile-menu-btn" aria-label="Abrir Menu">
+            <span class="w-5 h-0.5 bg-white transition-all duration-300"></span>
+            <span class="w-5 h-0.5 bg-white transition-all duration-300"></span>
+            <span class="w-5 h-0.5 bg-white transition-all duration-300"></span>
+        </button>
+    </header>
+
+    <!-- Mobile Navigation Fullscreen Overlay -->
+    <div class="fixed inset-0 bg-slate-950/95 backdrop-blur-lg z-40 hidden flex flex-col justify-center items-center gap-8" id="mobile-nav-overlay">
+        <a class="text-2xl text-slate-400 hover:text-purple-400 transition-colors font-medium" href="#services">Serviços</a>
+        <a class="text-2xl text-slate-400 hover:text-purple-400 transition-colors font-medium" href="#work">Portfólio</a>
+        <a class="text-2xl text-slate-400 hover:text-purple-400 transition-colors font-medium" href="#contact">Contato</a>
+        <a class="mt-4 px-8 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-full text-lg font-medium transition-all" href="#contact">
+            Iniciar Sequência
         </a>
-</div>
-</div>
-</nav>
-<main class="flex-grow pt-20" id="page-content">
-<!-- Hero Section -->
-<section class="py-section-padding px-margin-mobile md:px-margin-desktop max-w-container-max-width mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
-<div class="md:col-span-5 flex flex-col gap-unit">
-<div class="flex items-center gap-2 mb-4">
-<div class="w-8 h-[2px] bg-primary-container"></div>
-<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary-container">Precision Engineering</span>
-</div>
-<h1 class="font-display-lg text-display-lg text-on-surface">Engineered<br/>Elegance.</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant mt-4 mb-8">
-                    We architect high-performance web experiences. Merging sophisticated aesthetics with uncompromising velocity to elevate enterprise brands.
-                </p>
-<div class="flex gap-4">
-<button class="bg-primary-container text-on-primary px-8 py-4 rounded-DEFAULT font-label-sm text-label-sm uppercase hover:-translate-y-[2px] transition-transform shadow-[0px_10px_30px_rgba(0,0,0,0.04)]">
-                        Explore Work
-                    </button>
-<button class="bg-transparent border border-on-surface text-on-surface px-8 py-4 rounded-DEFAULT font-label-sm text-label-sm uppercase hover:bg-surface-variant transition-colors">
-                        Our Approach
-                    </button>
-</div>
-</div>
-<div class="md:col-span-6 md:col-start-7 relative mt-16 md:mt-0">
-<!-- Decorative ambient depth -->
-<div class="absolute inset-0 bg-surface-container-high rounded-xl blur-3xl opacity-50 transform translate-y-8 scale-95"></div>
-<img class="relative z-10 w-full h-auto rounded-xl shadow-[0px_10px_30px_rgba(0,0,0,0.08)]" data-alt="A sleek, modern laptop and smartphone mockup resting on a pristine white desk. The screens display a highly polished, fast-loading business website dashboard featuring minimalist charts and crisp typography. The lighting is bright and airy, typical of a high-end light mode UI studio setting. Subtle electric blue ambient light reflects off the devices, enhancing the technical and professional atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAau0RsdKW2Xi_2ARTliGYi4VSnYVH3OD7revECO8uh46YZyGGzSbo8bQdecOzAn6qBPgIOUAJqfE7uKYBY32zZERDvy_0FV7_aRoW6QQLbaWdeup0oofmUNihkHxuu0KBb_lQPSn12x1keFDtobfUlSy9lXHIzKlvnXEa9GTkLJMJr-zE5780C3ySM-y2X_5wtfKPCiK8q5sWwZ3WgsLqhK6GSL3Qa0qyEkgxXRxw5T4ZYbiaqTXK__cP5ahQd5q3V9srVntyOsHWv"/>
-</div>
-</section>
-<!-- High Performance Sites -->
-<section class="py-section-padding px-margin-mobile md:px-margin-desktop bg-surface-container-low">
-<div class="max-w-container-max-width mx-auto">
-<div class="mb-16 max-w-2xl">
-<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">High Performance Architecture.</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant">We build systems designed to scale seamlessly while delivering sub-second load times. Less weight, more velocity.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-<!-- Card 1 -->
-<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0px_10px_30px_rgba(0,0,0,0.04)] flex flex-col gap-4 group hover:-translate-y-[2px] transition-transform duration-300">
-<span class="material-symbols-outlined text-primary-container text-4xl mb-4" data-icon="memory">memory</span>
-<h3 class="font-headline-md text-headline-md text-on-surface">Optimized Core</h3>
-<p class="font-body-md text-body-md text-on-surface-variant flex-grow">Stripped down logic and efficient algorithms ensure minimal main-thread blocking and maximum responsiveness.</p>
-<div class="mt-4 flex gap-2">
-<span class="bg-surface-container px-3 py-1 rounded-lg font-label-sm text-label-sm text-on-surface">React</span>
-<span class="bg-surface-container px-3 py-1 rounded-lg font-label-sm text-label-sm text-on-surface">Next.js</span>
-</div>
-</div>
-<!-- Card 2 -->
-<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0px_10px_30px_rgba(0,0,0,0.04)] flex flex-col gap-4 group hover:-translate-y-[2px] transition-transform duration-300">
-<span class="material-symbols-outlined text-primary-container text-4xl mb-4" data-icon="cloud_sync">cloud_sync</span>
-<h3 class="font-headline-md text-headline-md text-on-surface">Edge Delivery</h3>
-<p class="font-body-md text-body-md text-on-surface-variant flex-grow">Global asset distribution and edge computing bring your application closer to the user for instant access.</p>
-<div class="mt-4 flex gap-2">
-<span class="bg-surface-container px-3 py-1 rounded-lg font-label-sm text-label-sm text-on-surface">CDN</span>
-<span class="bg-surface-container px-3 py-1 rounded-lg font-label-sm text-label-sm text-on-surface">Edge Config</span>
-</div>
-</div>
-<!-- Card 3 -->
-<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0px_10px_30px_rgba(0,0,0,0.04)] flex flex-col gap-4 group hover:-translate-y-[2px] transition-transform duration-300">
-<span class="material-symbols-outlined text-primary-container text-4xl mb-4" data-icon="database">database</span>
-<h3 class="font-headline-md text-headline-md text-on-surface">Scalable Data</h3>
-<p class="font-body-md text-body-md text-on-surface-variant flex-grow">Robust database architectures designed to handle high concurrency without degradation in query speed.</p>
-<div class="mt-4 flex gap-2">
-<span class="bg-surface-container px-3 py-1 rounded-lg font-label-sm text-label-sm text-on-surface">PostgreSQL</span>
-<span class="bg-surface-container px-3 py-1 rounded-lg font-label-sm text-label-sm text-on-surface">Redis</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Fast as Lightning / Performance Indicators -->
-<section class="py-section-padding px-margin-mobile md:px-margin-desktop relative overflow-hidden">
-<!-- Background motion blur accent -->
-<div class="absolute top-1/2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary-container/20 to-transparent transform -translate-y-1/2"></div>
-<div class="max-w-container-max-width mx-auto grid grid-cols-1 md:grid-cols-2 gap-margin-desktop items-center relative z-10">
-<div>
-<h2 class="font-headline-lg text-headline-lg text-on-surface mb-6">Fast as Lightning.</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
-                        We don't just optimize; we engineer for speed. Every kilobyte is scrutinized, every render path is streamlined. The result is an application that feels instantaneous.
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        
+        <!-- Hero Section -->
+        <section class="relative min-h-screen flex items-center pt-28 pb-16 overflow-hidden" id="home">
+            <!-- Neon background glows -->
+            <div class="absolute top-1/4 right-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-[120px] pointer-events-none animate-pulse-glow"></div>
+            <div class="absolute bottom-1/4 left-1/4 w-96 h-96 bg-emerald-500/5 rounded-full blur-[120px] pointer-events-none animate-pulse-glow" style="animation-delay: 2s;"></div>
+            
+            <div class="w-full max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-16 items-center relative z-10">
+                <!-- Left column: Text & Badges -->
+                <div class="flex flex-col gap-6 text-center md:text-left items-center md:items-start">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-slate-800 bg-slate-900/60 text-xs font-medium text-purple-400 w-max reveal-on-scroll">
+                        <span class="w-2 h-2 rounded-full bg-purple-400 animate-pulse"></span>
+                        Sistema Online
+                    </div>
+                    
+                    <!-- Desktop title -->
+                    <h1 class="hidden md:block text-6xl lg:text-7xl font-extrabold tracking-tighter leading-[1.1] text-white reveal-on-scroll">
+                        Precision in <br/>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-emerald-400">Darkness.</span>
+                    </h1>
+                    
+                    <!-- Mobile optimized title -->
+                    <h1 class="block md:hidden text-4xl sm:text-5xl font-extrabold tracking-tighter leading-[1.1] text-white reveal-on-scroll">
+                        Immersive Digital <br/>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-emerald-400">Experiences.</span>
+                    </h1>
+                    
+                    <p class="text-slate-400 text-base md:text-lg max-w-md leading-relaxed reveal-on-scroll">
+                        Nós criamos experiências digitais de altíssimo desempenho. Interfaces voltadas para desenvolvedores e marcas de tecnologia com rigor estético inegociável.
                     </p>
-<div class="flex flex-col gap-6">
-<!-- Custom Performance Indicator 1 -->
-<div>
-<div class="flex justify-between mb-2">
-<span class="font-label-sm text-label-sm uppercase text-on-surface">Time to Interactive</span>
-<span class="font-label-sm text-label-sm text-primary-container">0.8s</span>
-</div>
-<div class="h-[2px] w-full bg-surface-variant relative overflow-hidden">
-<div class="absolute left-0 top-0 h-full bg-primary-container w-[90%] shadow-[0_0_10px_rgba(0,71,255,0.5)]"></div>
-</div>
-</div>
-<!-- Custom Performance Indicator 2 -->
-<div>
-<div class="flex justify-between mb-2">
-<span class="font-label-sm text-label-sm uppercase text-on-surface">Lighthouse Score</span>
-<span class="font-label-sm text-label-sm text-primary-container">100/100</span>
-</div>
-<div class="h-[2px] w-full bg-surface-variant relative overflow-hidden">
-<div class="absolute left-0 top-0 h-full bg-primary-container w-full shadow-[0_0_10px_rgba(0,71,255,0.5)]"></div>
-</div>
-</div>
-</div>
-</div>
-<div class="relative h-[400px] bg-surface-container-lowest rounded-xl shadow-[0px_10px_30px_rgba(0,0,0,0.04)] border border-surface-variant overflow-hidden flex items-center justify-center">
-<img class="w-full h-full object-cover opacity-80" data-alt="Abstract visualization of high-speed data transfer. Thin, bright electric blue laser lines shoot horizontally across a clean, minimalist off-white background. The image implies motion, velocity, and optical fiber communications. Soft, blurred edges suggest rapid movement, perfectly aligning with a modern, high-tech engineering aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA243RMx3-ERtS9i6M-QX61WzyF68VIO_QlyxmVDE-jA_qkXNMGqboMYYvEzmPWyJVd1N9B3hYBR_JoxOLZR036facgzsH2ngfeOUydhYNO6VoFqoOEiAgSVqVjvUruHz29Pr7A5Ytg-A3HNOdaesAdynFrqe5T74e7DjRz4KvXFreynEepdxFF91fRDDTOaEnjhazwS-TzgoIAJOJV5VkfnnPmtO-PrHYgfTlhKa9QuDNaGje-HN1jfXmzO4x6JmDY8zYAPvIxM-Ce"/>
-</div>
-</div>
-</section>
-<!-- Secure by Design -->
-<section class="py-section-padding px-margin-mobile md:px-margin-desktop bg-surface-container-high">
-<div class="max-w-container-max-width mx-auto text-center max-w-3xl">
-<span class="material-symbols-outlined text-primary-container text-5xl mb-6" data-icon="shield_lock" data-weight="fill" style="font-variation-settings: 'FILL' 1;">shield_lock</span>
-<h2 class="font-headline-lg text-headline-lg text-on-surface mb-6">Secure by Design.</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant mb-10">
-                    Reliability is non-negotiable. We implement enterprise-grade security protocols from the ground up, ensuring your platform is resilient against evolving threats while maintaining operational integrity.
-                </p>
-<button class="bg-transparent border border-on-surface text-on-surface px-8 py-4 rounded-DEFAULT font-label-sm text-label-sm uppercase hover:bg-surface-variant transition-colors">
-                    Review Security Specs
-                </button>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="w-full bg-surface dark:bg-surface-dim border-t border-outline-variant dark:border-outline py-section-padding px-margin-mobile md:px-margin-desktop">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter max-w-container-max-width mx-auto">
-<div>
-<div class="text-headline-md font-headline-md font-bold text-on-surface dark:text-on-surface-variant mb-4">
-                    DL Tech
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mt-4 reveal-on-scroll">
+                        <a class="px-8 py-4 bg-purple-600 text-white rounded font-medium hover:bg-purple-700 transition-all text-center duration-300 shadow-lg shadow-purple-600/20 hover:shadow-purple-600/40 active:scale-95" href="#work">
+                            Iniciar Sequência
+                        </a>
+                        <a class="px-8 py-4 bg-transparent text-white border border-slate-800 hover:border-slate-700 hover:bg-slate-900/50 rounded font-medium transition-all text-center duration-300 active:scale-95" href="#services">
+                            Documentação
+                        </a>
+                    </div>
                 </div>
-<div class="font-label-sm text-label-sm text-secondary dark:text-secondary-fixed opacity-80">
-                    © 2024 DL Tech. Engineered Elegance.
+                
+                <!-- Right column: Interactive abstract 3D spheres -->
+                <div class="relative h-[400px] md:h-[500px] w-full flex items-center justify-center reveal-on-scroll">
+                    <div class="absolute w-72 h-72 rounded-full bg-slate-900/40 border border-slate-800/80 backdrop-blur-2xl flex items-center justify-center animate-float-1 shadow-2xl shadow-purple-500/5">
+                        <!-- Nested orbital structure -->
+                        <div class="w-56 h-56 rounded-full border border-purple-500/20 flex items-center justify-center relative">
+                            <div class="absolute w-4 h-4 rounded-full bg-purple-400 top-4 left-4 animate-ping"></div>
+                            <div class="w-36 h-36 rounded-full border border-emerald-500/20 flex items-center justify-center">
+                                <div class="w-16 h-16 rounded-full bg-gradient-to-br from-purple-600 to-emerald-500 opacity-60 filter blur-md"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Satellite spheres -->
+                    <div class="absolute w-24 h-24 rounded-full bg-slate-800/60 border border-slate-700/80 backdrop-blur-xl animate-float-2 top-10 right-10 flex items-center justify-center shadow-xl">
+                        <div class="w-8 h-8 rounded-full bg-purple-500/20 border border-purple-400/40"></div>
+                    </div>
+                    <div class="absolute w-16 h-16 rounded-full bg-slate-900/80 border border-slate-800/90 backdrop-blur-xl animate-float-1 bottom-12 left-12 flex items-center justify-center shadow-lg">
+                        <div class="w-4 h-4 rounded-full bg-emerald-400"></div>
+                    </div>
                 </div>
-</div>
-<div class="flex flex-wrap md:justify-end gap-6 font-label-sm text-label-sm">
-<a class="text-secondary dark:text-secondary-fixed hover:text-primary dark:hover:text-primary-fixed transition-colors opacity-80 hover:opacity-100 transition-opacity" href="#">Privacy Policy</a>
-<a class="text-secondary dark:text-secondary-fixed hover:text-primary dark:hover:text-primary-fixed transition-colors opacity-80 hover:opacity-100 transition-opacity" href="#">Terms of Service</a>
-<a class="text-secondary dark:text-secondary-fixed hover:text-primary dark:hover:text-primary-fixed transition-colors opacity-80 hover:opacity-100 transition-opacity" href="#">Cookie Settings</a>
-<a class="text-secondary dark:text-secondary-fixed hover:text-primary dark:hover:text-primary-fixed transition-colors opacity-80 hover:opacity-100 transition-opacity" href="#">LinkedIn</a>
-<a class="text-secondary dark:text-secondary-fixed hover:text-primary dark:hover:text-primary-fixed transition-colors opacity-80 hover:opacity-100 transition-opacity" href="#">GitHub</a>
-</div>
-</div>
-</footer>
-</body></html>
+            </div>
+        </section>
+        
+        <!-- Core Modules Section -->
+        <section class="py-24 md:py-32 border-t border-slate-900 bg-slate-950/40" id="services">
+            <div class="max-w-7xl mx-auto px-6 md:px-12">
+                <div class="mb-16 text-center md:text-left reveal-on-scroll">
+                    <h2 class="text-3xl md:text-4xl font-bold tracking-tighter text-white mb-4">Módulos Principais</h2>
+                    <p class="text-slate-400 max-w-2xl text-base md:text-lg">
+                        Arquitetando soluções escaláveis em toda a stack da web moderna.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    
+                    <!-- Card 1: Front-End Architecture -->
+                    <div class="group obsidian-card rounded-lg p-8 md:p-10 reveal-on-scroll">
+                        <span class="material-symbols-outlined text-4xl text-purple-400 mb-6 block">code_blocks</span>
+                        <h3 class="text-xl md:text-2xl font-bold text-white mb-3">Arquitetura Front-End</h3>
+                        <p class="text-slate-400 leading-relaxed mb-6">
+                            Interfaces orientadas a componentes utilizando frameworks modernos. Construímos views semânticas, acessíveis e focadas em performance.
+                        </p>
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="px-2.5 py-1 text-xs bg-slate-900/60 border border-slate-800 rounded text-slate-400">React</span>
+                            <span class="px-2.5 py-1 text-xs bg-slate-900/60 border border-slate-800 rounded text-slate-400">Vue</span>
+                            <span class="px-2.5 py-1 text-xs bg-slate-900/60 border border-slate-800 rounded text-slate-400">Tailwind</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 2: Backend Systems -->
+                    <div class="group obsidian-card rounded-lg p-8 md:p-10 reveal-on-scroll">
+                        <span class="material-symbols-outlined text-4xl text-purple-400 mb-6 block">dns</span>
+                        <h3 class="text-xl md:text-2xl font-bold text-white mb-3">Sistemas Backend</h3>
+                        <p class="text-slate-400 leading-relaxed mb-6">
+                            APIs robustas e arquiteturas de banco de dados eficientes. Foco total em segurança de dados, baixa latência e escalabilidade horizontal.
+                        </p>
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="px-2.5 py-1 text-xs bg-slate-900/60 border border-slate-800 rounded text-slate-400">Node.js</span>
+                            <span class="px-2.5 py-1 text-xs bg-slate-900/60 border border-slate-800 rounded text-slate-400">PostgreSQL</span>
+                            <span class="px-2.5 py-1 text-xs bg-slate-900/60 border border-slate-800 rounded text-slate-400">Redis</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 3: Design Engineering -->
+                    <div class="group obsidian-card rounded-lg p-8 md:p-10 reveal-on-scroll">
+                        <span class="material-symbols-outlined text-4xl text-purple-400 mb-6 block">design_services</span>
+                        <h3 class="text-xl md:text-2xl font-bold text-white mb-3">Engenharia de Design</h3>
+                        <p class="text-slate-400 leading-relaxed mb-6">
+                            Eliminando o abismo entre o design do Figma e o código de produção. Implementamos Design Systems com fidelidade matemática e tokens consistentes.
+                        </p>
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="px-2.5 py-1 text-xs bg-slate-900/60 border border-slate-800 rounded text-slate-400">Figma</span>
+                            <span class="px-2.5 py-1 text-xs bg-slate-900/60 border border-slate-800 rounded text-slate-400">Tokens</span>
+                            <span class="px-2.5 py-1 text-xs bg-slate-900/60 border border-slate-800 rounded text-slate-400">Storybook</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 4: Performance Ops -->
+                    <div class="group obsidian-card rounded-lg p-8 md:p-10 reveal-on-scroll">
+                        <span class="material-symbols-outlined text-4xl text-purple-400 mb-6 block">memory</span>
+                        <h3 class="text-xl md:text-2xl font-bold text-white mb-3">Operações & Performance</h3>
+                        <p class="text-slate-400 leading-relaxed mb-6">
+                            Pipelines de CI/CD automatizados, testes rigorosos e otimização obsessiva de Core Web Vitals para estabilidade crítica sob carga.
+                        </p>
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="px-2.5 py-1 text-xs bg-slate-900/60 border border-slate-800 rounded text-slate-400">Docker</span>
+                            <span class="px-2.5 py-1 text-xs bg-slate-900/60 border border-slate-800 rounded text-slate-400">Actions</span>
+                            <span class="px-2.5 py-1 text-xs bg-slate-900/60 border border-slate-800 rounded text-slate-400">Vitals</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 5: Institutional Platforms -->
+                    <div class="group obsidian-card rounded-lg p-8 md:p-10 reveal-on-scroll">
+                        <span class="material-symbols-outlined text-4xl text-purple-400 mb-6 block">public</span>
+                        <h3 class="text-xl md:text-2xl font-bold text-white mb-3">Plataformas Institucionais</h3>
+                        <p class="text-slate-400 leading-relaxed mb-6">
+                            Sites institucionais elegantes focados em autoridade de marca, estruturados com SEO avançado e acessibilidade (A11y) nativa.
+                        </p>
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="px-2.5 py-1 text-xs bg-slate-900/60 border border-slate-800 rounded text-slate-400">Next.js</span>
+                            <span class="px-2.5 py-1 text-xs bg-slate-900/60 border border-slate-800 rounded text-slate-400">SEO</span>
+                            <span class="px-2.5 py-1 text-xs bg-slate-900/60 border border-slate-800 rounded text-slate-400">A11y</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 6: E-commerce Ecosystems -->
+                    <div class="group obsidian-card rounded-lg p-8 md:p-10 reveal-on-scroll">
+                        <span class="material-symbols-outlined text-4xl text-purple-400 mb-6 block">shopping_cart</span>
+                        <h3 class="text-xl md:text-2xl font-bold text-white mb-3">Ecossistemas E-commerce</h3>
+                        <p class="text-slate-400 leading-relaxed mb-6">
+                            Lojas virtuais robustas e integrações de pagamentos complexas voltadas a taxas de conversão recordes e segurança nas transações.
+                        </p>
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="px-2.5 py-1 text-xs bg-slate-900/60 border border-slate-800 rounded text-slate-400">Shopify</span>
+                            <span class="px-2.5 py-1 text-xs bg-slate-900/60 border border-slate-800 rounded text-slate-400">Stripe</span>
+                            <span class="px-2.5 py-1 text-xs bg-slate-900/60 border border-slate-800 rounded text-slate-400">APIs</span>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        
+        <!-- Selected Work Section -->
+        <section class="py-24 md:py-32 border-t border-slate-900" id="work">
+            <div class="max-w-7xl mx-auto px-6 md:px-12">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6 reveal-on-scroll">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-bold tracking-tighter text-white mb-4">Trabalhos Selecionados</h2>
+                        <p class="text-slate-400 max-w-xl text-base md:text-lg">
+                            Recentes deploys de infraestruturas web e estudos de caso de arquitetura.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Bento Grid Layout -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[320px]">
+                    <!-- Bento item 1: Large featured project (Nexus Ledger) -->
+                    <div class="md:col-span-2 md:row-span-2 group relative rounded-lg border border-slate-800 overflow-hidden bg-slate-900/50 reveal-on-scroll">
+                        <img alt="Painel Nexus Ledger" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-85" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-8 w-full">
+                            <span class="text-purple-400 text-xs font-bold uppercase tracking-widest mb-2 block">Plataforma Fintech</span>
+                            <h3 class="text-2xl md:text-3xl font-bold text-white mb-2">Nexus Ledger</h3>
+                            <p class="text-slate-400 text-sm max-w-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                Dashboard financeiro ultra rápido com visualizações em tempo real integradas a barramentos de microsserviços.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Bento item 2: Text/Link callout project (Aura Sync) -->
+                    <div class="group relative rounded-lg border border-slate-800 overflow-hidden bg-slate-900/30 p-8 flex flex-col justify-between reveal-on-scroll">
+                        <div class="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="flex justify-between items-start">
+                            <span class="material-symbols-outlined text-4xl text-emerald-400">sync_alt</span>
+                            <span class="material-symbols-outlined text-slate-500 group-hover:text-purple-400 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300">arrow_outward</span>
+                        </div>
+                        <div>
+                            <span class="text-emerald-400 text-xs font-bold uppercase tracking-widest mb-1 block">API Gateway</span>
+                            <h3 class="text-xl font-bold text-white">Aura Sync</h3>
+                            <p class="text-slate-400 text-sm mt-2">
+                                Gateway de microsserviços distribuído com latência abaixo de 10ms.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Bento item 3: Visual abstract code block (Metrics Void) -->
+                    <div class="group relative rounded-lg border border-slate-800 overflow-hidden bg-slate-900/50 reveal-on-scroll">
+                        <img alt="Abstração de dados e código" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-40 group-hover:opacity-75" src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6 z-10">
+                            <span class="text-purple-400 text-xs font-bold uppercase tracking-widest mb-1 block">Visualização de Dados</span>
+                            <h3 class="text-xl font-bold text-white">Metrics Void</h3>
+                            <p class="text-slate-300 text-xs mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                Painel conceitual de fluxo de dados de servidores globais.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section class="py-24 md:py-32 bg-slate-950 border-t border-slate-900" id="contact">
+            <div class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
+                
+                <!-- Text info -->
+                <div class="flex flex-col justify-center reveal-on-scroll">
+                    <h2 class="text-4xl md:text-5xl font-bold tracking-tighter text-white mb-6">
+                        Iniciar<br/>Conexão.
+                    </h2>
+                    <p class="text-slate-400 text-base md:text-lg mb-12">
+                        Submeta seus parâmetros. Nossos sistemas farão o parsing dos seus requisitos para estabelecer um canal de comunicação seguro em até 24 horas.
+                    </p>
+                    
+                    <div class="space-y-6 border-l-2 border-slate-800 pl-6">
+                        <div>
+                            <h4 class="text-white font-bold mb-1">Base Central</h4>
+                            <p class="text-slate-400 text-sm">São Paulo, Setor Digital</p>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold mb-1">Link Direto</h4>
+                            <p class="text-purple-400 text-sm hover:underline cursor-pointer">contato@dltech.dev</p>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold mb-1">Status do Core</h4>
+                            <div class="flex items-center gap-2 mt-1">
+                                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                                <p class="text-emerald-400 text-sm">Aceitando novos processos</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form Card -->
+                <div class="bg-slate-900/50 border border-slate-800 rounded-lg p-8 relative backdrop-blur-md reveal-on-scroll">
+                    <div class="absolute -top-px left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent"></div>
+                    
+                    <form class="space-y-6" id="contact-form">
+                        <input type="hidden" name="project_type" id="project-type-input" value="">
+                        
+                        <!-- Floating Label inputs -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div class="floating-label-group">
+                                <input class="w-full bg-transparent border-b border-slate-800 py-3 text-white focus:border-purple-500 focus:ring-0 focus:outline-none transition-colors duration-300" placeholder=" " type="text" id="user-name" required/>
+                                <label class="text-slate-400" for="user-name">String de ID (Nome)</label>
+                            </div>
+                            <div class="floating-label-group">
+                                <input class="w-full bg-transparent border-b border-slate-800 py-3 text-white focus:border-purple-500 focus:ring-0 focus:outline-none transition-colors duration-300" placeholder=" " type="email" id="user-email" required/>
+                                <label class="text-slate-400" for="user-email">Endereço de Retorno (E-mail)</label>
+                            </div>
+                        </div>
+                        
+                        <div class="floating-label-group">
+                            <textarea class="w-full bg-transparent border-b border-slate-800 py-3 text-white focus:border-purple-500 focus:ring-0 focus:outline-none transition-colors duration-300 resize-none" placeholder=" " rows="3" id="user-message" required></textarea>
+                            <label class="text-slate-400" for="user-message">Payload (Mensagem / Requisitos)</label>
+                        </div>
+                        
+                        <!-- Interactive project type chips -->
+                        <div class="space-y-3">
+                            <label class="text-xs font-semibold text-slate-400 uppercase tracking-wider block">Tipo de Projeto</label>
+                            <div class="flex flex-wrap gap-3">
+                                <button type="button" class="project-chip px-4 py-2 text-xs font-medium rounded-full border border-slate-800 bg-slate-900/50 text-slate-400 hover:border-slate-700 transition-all duration-300" data-value="Institucional">
+                                    Institucional
+                                </button>
+                                <button type="button" class="project-chip px-4 py-2 text-xs font-medium rounded-full border border-slate-800 bg-slate-900/50 text-slate-400 hover:border-slate-700 transition-all duration-300" data-value="E-commerce">
+                                    E-commerce
+                                </button>
+                                <button type="button" class="project-chip px-4 py-2 text-xs font-medium rounded-full border border-slate-800 bg-slate-900/50 text-slate-400 hover:border-slate-700 transition-all duration-300" data-value="Custom Stack">
+                                    Custom Stack
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Submit button with loading state support -->
+                        <button class="w-full bg-purple-600 hover:bg-purple-700 text-white py-4 rounded font-bold transition-all duration-300 flex justify-center items-center gap-2 group/btn shadow-lg shadow-purple-600/10 hover:shadow-purple-600/30" type="submit" id="submit-btn">
+                            <span class="btn-text">Transmitir Dados</span>
+                            <span class="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform">send</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-900 py-12 px-6 md:px-12 w-full max-w-7xl mx-auto z-10 relative flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="text-sm text-slate-500 font-medium text-center md:text-left">
+            © 2026 DL Tech. Precision in Darkness. Todos os direitos reservados.
+        </div>
+        <nav class="flex gap-6">
+            <a class="text-sm text-slate-500 hover:text-purple-400 transition-colors" href="#">Privacidade</a>
+            <a class="text-sm text-slate-500 hover:text-purple-400 transition-colors" href="#">Termos</a>
+            <a class="text-sm text-slate-500 hover:text-purple-400 transition-colors" href="#">GitHub</a>
+        </nav>
+    </footer>
+
+    <!-- Fixed Mobile Navigation Bottom Bar -->
+    <nav class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex justify-around items-center p-2 bg-slate-900/90 backdrop-blur-xl border border-slate-850 shadow-2xl shadow-purple-500/10 w-[90%] max-w-md rounded-full md:hidden">
+        <a class="flex flex-col items-center justify-center text-purple-400 rounded-full px-5 py-2 active:scale-90 duration-200" href="#home">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+            <span class="font-medium text-[10px] mt-0.5">Home</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-slate-400 px-5 py-2 hover:text-purple-400 transition-all active:scale-90 duration-200" href="#services">
+            <span class="material-symbols-outlined">layers</span>
+            <span class="font-medium text-[10px] mt-0.5">Serviços</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-slate-400 px-5 py-2 hover:text-purple-400 transition-all active:scale-90 duration-200" href="#work">
+            <span class="material-symbols-outlined">grid_view</span>
+            <span class="font-medium text-[10px] mt-0.5">Trabalhos</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-slate-400 px-5 py-2 hover:text-purple-400 transition-all active:scale-90 duration-200" href="#contact">
+            <span class="material-symbols-outlined">mail</span>
+            <span class="font-medium text-[10px] mt-0.5">Contato</span>
+        </a>
+    </nav>
+
+    <!-- Main Module script -->
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
