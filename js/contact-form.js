@@ -109,14 +109,25 @@ export class ContactFormHandler {
 
     if (!isValid) return;
 
-    // Simulate sending data
     this.setSubmitState('loading');
 
     try {
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      this.setSubmitState('success');
-      this.form.reset();
-      this.resetChips();
+      const formData = new FormData(this.form);
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        this.setSubmitState('success');
+        this.form.reset();
+        this.resetChips();
+      } else {
+        throw new Error(data.message || 'Erro no envio do formulário.');
+      }
     } catch (err) {
       this.setSubmitState('error');
       console.error(err);

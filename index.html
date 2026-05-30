@@ -384,22 +384,23 @@
                     <div class="absolute -top-px left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent"></div>
                     
                     <form class="space-y-6" id="contact-form">
+                        <input type="hidden" name="access_key" value="bc2f2025-aab9-4503-ac62-01041fb24a71">
                         <input type="hidden" name="project_type" id="project-type-input" value="">
                         
                         <!-- Floating Label inputs -->
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <div class="floating-label-group">
-                                <input class="w-full bg-transparent border-b border-slate-800 py-3 text-white focus:border-purple-500 focus:ring-0 focus:outline-none transition-colors duration-300" placeholder=" " type="text" id="user-name" required/>
+                                <input class="w-full bg-transparent border-b border-slate-800 py-3 text-white focus:border-purple-500 focus:ring-0 focus:outline-none transition-colors duration-300" placeholder=" " type="text" id="user-name" name="name" required/>
                                 <label class="text-slate-400" for="user-name">Seu Nome ou Empresa</label>
                             </div>
                             <div class="floating-label-group">
-                                <input class="w-full bg-transparent border-b border-slate-800 py-3 text-white focus:border-purple-500 focus:ring-0 focus:outline-none transition-colors duration-300" placeholder=" " type="email" id="user-email" required/>
+                                <input class="w-full bg-transparent border-b border-slate-800 py-3 text-white focus:border-purple-500 focus:ring-0 focus:outline-none transition-colors duration-300" placeholder=" " type="email" id="user-email" name="email" required/>
                                 <label class="text-slate-400" for="user-email">Seu E-mail</label>
                             </div>
                         </div>
                         
                         <div class="floating-label-group">
-                            <textarea class="w-full bg-transparent border-b border-slate-800 py-3 text-white focus:border-purple-500 focus:ring-0 focus:outline-none transition-colors duration-300 resize-none" placeholder=" " rows="3" id="user-message" required></textarea>
+                            <textarea class="w-full bg-transparent border-b border-slate-800 py-3 text-white focus:border-purple-500 focus:ring-0 focus:outline-none transition-colors duration-300 resize-none" placeholder=" " rows="3" id="user-message" name="message" required></textarea>
                             <label class="text-slate-400" for="user-message">Descreva seu projeto ou desafio técnico</label>
                         </div>
                         
