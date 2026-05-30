@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html class="dark scroll-smooth" lang="pt-BR">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Estudo de Caso: Criando com Jesus — DL Tech</title>
+    <meta name="description" content="Estudo de caso do portal digital de e-commerce e ensino familiar cristão Criando com Jesus, desenvolvido sob medida em PHP e MariaDB pela DL Tech.">
+    <meta name="keywords" content="Criando com Jesus, Web Design Case Study, Custom E-commerce, Custom PHP, MariaDB, DL Tech">
+    <meta name="author" content="DL Tech">
+    
+    <!-- Tailwind CSS & Plugins -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        slate: {
+                            950: "#0b0f19"
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts & Material Symbols -->
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    
+    <!-- Custom Style Sheet -->
+    <link href="css/style.css" rel="stylesheet"/>
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased selection:bg-purple-600 selection:text-white">
+
+    <!-- Header Navigation -->
+    <header class="fixed top-0 w-full z-50 transition-all duration-300 border-b border-transparent bg-transparent py-4 px-6 md:px-12 flex justify-between items-center" id="main-nav">
+        <div class="flex items-center gap-2 text-xl font-bold tracking-tighter text-white">
+            <a href="index.html" class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-purple-400" style="font-variation-settings: 'FILL' 1;">terminal</span>
+                <span>DL TECH</span>
+            </a>
+        </div>
+        
+        <nav class="hidden md:flex gap-8 items-center">
+            <a class="text-slate-400 hover:text-purple-400 transition-colors text-sm font-medium" href="index.html#services">Serviços</a>
+            <a class="text-slate-400 hover:text-purple-400 transition-colors text-sm font-medium" href="index.html#work">Portfólio</a>
+            <a class="text-slate-400 hover:text-purple-400 transition-colors text-sm font-medium" href="index.html#contact">Contato</a>
+        </nav>
+        
+        <div class="hidden md:block">
+            <a href="index.html#contact" class="px-5 py-2.5 bg-slate-900/50 hover:bg-slate-800 border border-slate-800 hover:border-purple-500/50 text-white rounded text-sm font-medium transition-all duration-300">
+                Iniciar Sequência
+            </a>
+        </div>
+        
+        <!-- Burger Menu Button -->
+        <button class="md:hidden flex flex-col gap-1.5 justify-center items-center w-8 h-8 rounded border border-slate-800 bg-slate-900/30 p-1" id="mobile-menu-btn" aria-label="Abrir Menu">
+            <span class="w-5 h-0.5 bg-white transition-all duration-300"></span>
+            <span class="w-5 h-0.5 bg-white transition-all duration-300"></span>
+            <span class="w-5 h-0.5 bg-white transition-all duration-300"></span>
+        </button>
+    </header>
+
+    <!-- Mobile Navigation Fullscreen Overlay -->
+    <div class="fixed inset-0 bg-slate-950/95 backdrop-blur-lg z-40 hidden flex flex-col justify-center items-center gap-8" id="mobile-nav-overlay">
+        <a class="text-2xl text-slate-400 hover:text-purple-400 transition-colors font-medium" href="index.html#services">Serviços</a>
+        <a class="text-2xl text-slate-400 hover:text-purple-400 transition-colors font-medium" href="index.html#work">Portfólio</a>
+        <a class="text-2xl text-slate-400 hover:text-purple-400 transition-colors font-medium" href="index.html#contact">Contato</a>
+        <a class="mt-4 px-8 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-full text-lg font-medium transition-all" href="index.html#contact">
+            Iniciar Sequência
+        </a>
+    </div>
+
+    <!-- Main Content -->
+    <main class="pt-32 pb-24">
+        
+        <!-- Hero Case Study Section -->
+        <section class="max-w-7xl mx-auto px-6 md:px-12 mb-16">
+            <div class="flex flex-col gap-4 mb-8">
+                <a href="index.html#work" class="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 text-sm font-medium w-max transition-colors">
+                    <span class="material-symbols-outlined text-base">arrow_back</span> Voltar ao Portfólio
+                </a>
+                <span class="text-purple-400 text-xs font-bold uppercase tracking-widest block">Estudo de Caso de E-commerce</span>
+                <h1 class="text-4xl md:text-6xl font-extrabold tracking-tighter text-white">Criando com Jesus</h1>
+                <p class="text-slate-400 text-lg md:text-xl max-w-3xl leading-relaxed">
+                    Plataforma digital integrada de comércio eletrônico e cursos de ensino cristão familiar, focada em estabilidade sob carga e carregamento abaixo de 1 segundo.
+                </p>
+            </div>
+            
+            <!-- High Fidelity Screenshot Banner -->
+            <div class="relative w-full rounded-2xl border border-slate-800 bg-slate-900/30 overflow-hidden shadow-2xl p-4 md:p-6 reveal-on-scroll">
+                <div class="absolute inset-0 bg-gradient-to-tr from-purple-500/5 to-transparent pointer-events-none"></div>
+                <img alt="Screenshot do site Criando com Jesus" class="w-full h-auto rounded-lg border border-slate-800 shadow-xl" src="images/criando-com-jesus.png"/>
+            </div>
+        </section>
+
+        <!-- Project Details Section -->
+        <section class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-3 gap-16">
+            
+            <!-- Project metadata sidebar -->
+            <div class="lg:col-span-1 space-y-8">
+                <div class="bg-slate-900/50 border border-slate-800/80 rounded-xl p-8 backdrop-blur-md space-y-6 reveal-on-scroll">
+                    <h3 class="text-lg font-bold text-white border-b border-slate-800 pb-3">Ficha Técnica</h3>
+                    
+                    <div>
+                        <h4 class="text-xs text-slate-500 font-semibold uppercase tracking-wider mb-1">Cliente</h4>
+                        <p class="text-slate-200 text-sm font-medium">Criando com Jesus</p>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-xs text-slate-500 font-semibold uppercase tracking-wider mb-1">Tecnologias</h4>
+                        <div class="flex gap-2 flex-wrap mt-2">
+                            <span class="px-2.5 py-1 text-xs bg-slate-950 border border-slate-800 rounded text-slate-400">Custom PHP</span>
+                            <span class="px-2.5 py-1 text-xs bg-slate-950 border border-slate-800 rounded text-slate-400">MariaDB</span>
+                            <span class="px-2.5 py-1 text-xs bg-slate-950 border border-slate-800 rounded text-slate-400">CSS Customizado</span>
+                            <span class="px-2.5 py-1 text-xs bg-slate-950 border border-slate-800 rounded text-slate-400">Vanilla JS</span>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-xs text-slate-500 font-semibold uppercase tracking-wider mb-1">Serviços Prestados</h4>
+                        <ul class="text-slate-300 text-sm space-y-2 mt-1 font-medium">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span> Engenharia de Software</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span> Banco de Dados Relacional</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span> Design Engineering (Bespoke)</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span> Checkout de Alta Performance</li>
+                        </ul>
+                    </div>
+                    
+                    <a href="https://criandocomjesus.com.br/" target="_blank" rel="noopener" class="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 rounded font-bold transition-all duration-300 flex justify-center items-center gap-2 shadow-lg shadow-purple-600/10 hover:shadow-purple-600/30">
+                        Acessar Site Real
+                        <span class="material-symbols-outlined text-sm">open_in_new</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Case study body -->
+            <div class="lg:col-span-2 space-y-12 reveal-on-scroll">
+                
+                <!-- Section: O Desafio -->
+                <div class="space-y-4">
+                    <h2 class="text-2xl md:text-3xl font-bold text-white flex items-center gap-3">
+                        <span class="material-symbols-outlined text-purple-400">dangerous</span> O Desafio
+                    </h2>
+                    <p class="text-slate-400 leading-relaxed">
+                        O cliente necessitava de uma plataforma que integrasse um catálogo de e-commerce de materiais físicos (livros, guias de atividades) com uma área administrativa para gerenciamento de cursos digitais de formação familiar. A solução anterior sofria de lentidão crônica de banco de dados, falhas de checkout e dependência excessiva de plugins vulneráveis em plataformas CMS comuns, o que causava perdas diretas nas vendas.
+                    </p>
+                </div>
+                
+                <!-- Section: A Solução -->
+                <div class="space-y-4">
+                    <h2 class="text-2xl md:text-3xl font-bold text-white flex items-center gap-3">
+                        <span class="material-symbols-outlined text-purple-400">check_circle</span> A Solução Desenvolvida
+                    </h2>
+                    <p class="text-slate-400 leading-relaxed">
+                        Em vez de recorrer a construtores pesados de sites, a DL Tech desenvolveu um sistema **100% sob medida em PHP puro e MariaDB**. O front-end foi construído de forma limpa, priorizando semântica e tempo de renderização acelerado.
+                    </p>
+                    <p class="text-slate-400 leading-relaxed">
+                        Estruturamos um checkout otimizado sem fricção, onde o usuário realiza a compra com poucos cliques. Toda a lógica de persistência e segurança foi implementada no banco de dados MariaDB com tabelas indexadas e queries limpas, prevenindo injeções de código e reduzindo latências críticas do servidor.
+                    </p>
+                </div>
+                
+                <!-- Gallery of Real Screenshots -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 reveal-on-scroll">
+                    <div class="space-y-2">
+                        <h4 class="text-xs text-slate-500 font-semibold uppercase tracking-wider">Catálogo de Combos Especiais</h4>
+                        <div class="rounded-xl border border-slate-800 bg-slate-900/30 overflow-hidden p-2">
+                            <img alt="Combos Criando com Jesus" class="w-full h-[250px] object-cover object-top rounded-lg hover:scale-[1.02] transition-transform duration-300" src="images/criando-com-jesus-combos.png"/>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <h4 class="text-xs text-slate-500 font-semibold uppercase tracking-wider">Biblioteca de Atividades PDFs</h4>
+                        <div class="rounded-xl border border-slate-800 bg-slate-900/30 overflow-hidden p-2">
+                            <img alt="PDFs Criando com Jesus" class="w-full h-[250px] object-cover object-top rounded-lg hover:scale-[1.02] transition-transform duration-300" src="images/criando-com-jesus-pdfs.png"/>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Section: Resultados -->
+                <div class="space-y-4">
+                    <h2 class="text-2xl md:text-3xl font-bold text-white flex items-center gap-3">
+                        <span class="material-symbols-outlined text-purple-400">monitoring</span> Resultados de Impacto
+                    </h2>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-2">
+                        <!-- Stat 1 -->
+                        <div class="bg-slate-900/40 border border-slate-800 p-6 rounded-lg text-center">
+                            <h3 class="text-3xl font-extrabold text-purple-400 mb-1">&lt; 1.0s</h3>
+                            <p class="text-xs text-slate-500 uppercase font-semibold">Tempo de Carga</p>
+                        </div>
+                        <!-- Stat 2 -->
+                        <div class="bg-slate-900/40 border border-slate-800 p-6 rounded-lg text-center">
+                            <h3 class="text-3xl font-extrabold text-purple-400 mb-1">Zero</h3>
+                            <p class="text-xs text-slate-500 uppercase font-semibold">Plugins Quebrados</p>
+                        </div>
+                        <!-- Stat 3 -->
+                        <div class="bg-slate-900/40 border border-slate-800 p-6 rounded-lg text-center">
+                            <h3 class="text-3xl font-extrabold text-purple-400 mb-1">+40%</h3>
+                            <p class="text-xs text-slate-500 uppercase font-semibold">Taxa de Conversão</p>
+                        </div>
+                    </div>
+                    
+                    <p class="text-slate-400 leading-relaxed pt-2">
+                        Com a eliminação da sobrecarga do WordPress e o desenvolvimento em PHP puro, o site alcançou notas máximas no Google Lighthouse (Core Web Vitals). A segurança do sistema foi estabilizada e a velocidade resultou em um crescimento direto e mensurável na conversão de vendas físicas e inscrições nos cursos de educação familiar.
+                    </p>
+                </div>
+                
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-900 py-12 px-6 md:px-12 w-full max-w-7xl mx-auto z-10 relative flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="text-sm text-slate-500 font-medium text-center md:text-left">
+            © 2026 DL Tech. Precision in Darkness. Todos os direitos reservados.
+        </div>
+        <nav class="flex gap-6">
+            <a class="text-sm text-slate-500 hover:text-purple-400 transition-colors" href="#">Privacidade</a>
+            <a class="text-sm text-slate-500 hover:text-purple-400 transition-colors" href="#">Termos</a>
+            <a class="text-sm text-slate-500 hover:text-purple-400 transition-colors" href="#">GitHub</a>
+        </nav>
+    </footer>
+
+    <!-- Fixed Mobile Navigation Bottom Bar -->
+    <nav class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex justify-around items-center p-2 bg-slate-900/90 backdrop-blur-xl border border-slate-850 shadow-2xl shadow-purple-500/10 w-[90%] max-w-md rounded-full md:hidden">
+        <a class="flex flex-col items-center justify-center text-slate-400 rounded-full px-5 py-2 active:scale-90 duration-200" href="index.html#home">
+            <span class="material-symbols-outlined">home</span>
+            <span class="font-medium text-[10px] mt-0.5">Home</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-slate-400 px-5 py-2 hover:text-purple-400 transition-all active:scale-90 duration-200" href="index.html#services">
+            <span class="material-symbols-outlined">layers</span>
+            <span class="font-medium text-[10px] mt-0.5">Serviços</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-purple-400 px-5 py-2 hover:text-purple-400 transition-all active:scale-90 duration-200" href="index.html#work">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+            <span class="font-medium text-[10px] mt-0.5">Trabalhos</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-slate-400 px-5 py-2 hover:text-purple-400 transition-all active:scale-90 duration-200" href="index.html#contact">
+            <span class="material-symbols-outlined">mail</span>
+            <span class="font-medium text-[10px] mt-0.5">Contato</span>
+        </a>
+    </nav>
+
+    <!-- Main Module script -->
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
