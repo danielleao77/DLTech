@@ -13,6 +13,14 @@ export class ContactFormHandler {
     
     this.selectedProjectType = '';
 
+    // Modal elements
+    this.modal = document.getElementById('protocol-modal');
+    this.modalCard = document.getElementById('protocol-modal-card');
+    this.protocolText = document.getElementById('protocol-number');
+    this.copyBtn = document.getElementById('copy-protocol-btn');
+    this.copyBtnText = document.getElementById('copy-btn-text');
+    this.closeModalBtn = document.getElementById('close-protocol-modal');
+
     this.init();
   }
 
@@ -32,6 +40,21 @@ export class ContactFormHandler {
 
     // Form submission
     this.form.addEventListener('submit', (e) => this.handleSubmit(e));
+
+    // Modal close and copy button listeners
+    if (this.copyBtn) {
+      this.copyBtn.addEventListener('click', () => this.copyProtocolToClipboard());
+    }
+    if (this.closeModalBtn) {
+      this.closeModalBtn.addEventListener('click', () => this.closeModal());
+    }
+    if (this.modal) {
+      this.modal.addEventListener('click', (e) => {
+        if (e.target === this.modal) {
+          this.closeModal();
+        }
+      });
+    }
   }
 
   handleChipSelection(e) {
@@ -112,7 +135,9 @@ export class ContactFormHandler {
     this.setSubmitState('loading');
 
     try {
+      const protocol = this.generateProtocol();
       const formData = new FormData(this.form);
+      formData.append("protocolo", protocol);
 
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
@@ -125,6 +150,7 @@ export class ContactFormHandler {
         this.setSubmitState('success');
         this.form.reset();
         this.resetChips();
+        this.showModal(protocol);
       } else {
         throw new Error(data.message || 'Erro no envio do formulário.');
       }
@@ -186,6 +212,69 @@ export class ContactFormHandler {
     this.selectedProjectType = '';
     if (this.projectTypeInput) {
       this.projectTypeInput.value = '';
+    }
+  }
+
+  generateProtocol() {
+    const year = new Date().getFullYear();
+    const rand = Math.random().toString(36).substring(2, 8).toUpperCase();
+    return `DL-${year}-${rand}`;
+  }
+
+  showModal(protocol) {
+    if (!this.modal || !this.protocolText) return;
+
+    this.protocolText.innerText = protocol;
+    
+    // Reset copy button state
+    if (this.copyBtnText) this.copyBtnText.innerText = 'Copiar';
+    const copyIcon = this.copyBtn ? this.copyBtn.querySelector('.material-symbols-outlined') : null;
+    if (copyIcon) copyIcon.innerText = 'content_copy';
+
+    // Show modal with animation
+    this.modal.classList.remove('hidden');
+    // Force reflow
+    this.modal.offsetHeight;
+    this.modal.classList.remove('opacity-0');
+    this.modal.classList.add('opacity-100');
+
+    if (this.modalCard) {
+      this.modalCard.classList.remove('scale-95');
+      this.modalCard.classList.add('scale-100');
+    }
+  }
+
+  closeModal() {
+    if (!this.modal) return;
+
+    this.modal.classList.remove('opacity-100');
+    this.modal.classList.add('opacity-0');
+    if (this.modalCard) {
+      this.modalCard.classList.remove('scale-100');
+      this.modalCard.classList.add('scale-95');
+    }
+
+    setTimeout(() => {
+      this.modal.classList.add('hidden');
+    }, 300);
+  }
+
+  async copyProtocolToClipboard() {
+    if (!this.protocolText) return;
+    const protocol = this.protocolText.innerText;
+
+    try {
+      await navigator.clipboard.writeText(protocol);
+      if (this.copyBtnText) this.copyBtnText.innerText = 'Copiado!';
+      const copyIcon = this.copyBtn ? this.copyBtn.querySelector('.material-symbols-outlined') : null;
+      if (copyIcon) copyIcon.innerText = 'check';
+
+      setTimeout(() => {
+        if (this.copyBtnText) this.copyBtnText.innerText = 'Copiar';
+        if (copyIcon) copyIcon.innerText = 'content_copy';
+      }, 2000);
+    } catch (err) {
+      console.error('Falha ao copiar:', err);
     }
   }
 }

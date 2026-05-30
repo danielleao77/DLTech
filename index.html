@@ -464,6 +464,42 @@
         </a>
     </nav>
 
+    <!-- Protocol Success Modal -->
+    <div id="protocol-modal" class="fixed inset-0 z-50 flex items-center justify-center p-6 bg-slate-950/80 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-slate-900/90 border border-slate-800 rounded-lg p-8 max-w-md w-full relative backdrop-blur-xl shadow-2xl shadow-purple-500/10 scale-95 transition-all duration-300" id="protocol-modal-card">
+            <div class="absolute -top-px left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent"></div>
+            
+            <div class="flex flex-col items-center text-center">
+                <!-- Glowing success circle -->
+                <div class="w-16 h-16 rounded-full bg-purple-600/10 border border-purple-500/30 flex items-center justify-center mb-6 shadow-lg shadow-purple-500/20">
+                    <span class="material-symbols-outlined text-purple-400 text-3xl">task_alt</span>
+                </div>
+                
+                <h3 class="text-2xl font-bold text-white mb-2">Solicitação Registrada</h3>
+                <p class="text-slate-400 text-sm mb-6">
+                    Sua proposta foi associada a um número de protocolo exclusivo. Nossa equipe fará a análise de viabilidade técnica e entrará em contato em até 24 horas.
+                </p>
+                
+                <!-- Protocol Display Box -->
+                <div class="w-full bg-slate-950/50 border border-slate-850 rounded p-4 flex items-center justify-between gap-4 mb-8">
+                    <div class="text-left">
+                        <span class="text-[10px] font-bold text-slate-500 uppercase tracking-wider block">Código do Protocolo</span>
+                        <span id="protocol-number" class="text-white font-mono text-base font-semibold tracking-wider">DL-2026-XXXXXX</span>
+                    </div>
+                    <button id="copy-protocol-btn" class="px-3 py-2 bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-purple-400 border border-slate-800 hover:border-purple-500/30 rounded text-xs font-semibold flex items-center gap-1.5 transition-all duration-300 active:scale-95">
+                        <span class="material-symbols-outlined text-sm">content_copy</span>
+                        <span id="copy-btn-text">Copiar</span>
+                    </button>
+                </div>
+                
+                <!-- Close Button -->
+                <button id="close-protocol-modal" class="w-full py-3.5 bg-slate-900/50 hover:bg-slate-800 border border-slate-800 hover:border-purple-500/50 text-white rounded font-bold text-sm transition-all duration-300">
+                    Fechar Painel
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Main Module script -->
     <script type="module" src="js/main.js"></script>
 </body>
