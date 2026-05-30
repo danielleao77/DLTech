@@ -132,7 +132,7 @@ export class ContactFormHandler {
     if (state === 'loading') {
       this.submitBtn.disabled = true;
       this.submitBtn.classList.add('opacity-75', 'cursor-not-allowed');
-      if (btnText) btnText.innerText = 'Transmitindo Dados...';
+      if (btnText) btnText.innerText = 'Enviando solicitação...';
       if (btnIcon) {
         btnIcon.innerText = 'sync';
         btnIcon.classList.add('animate-spin');
@@ -142,7 +142,7 @@ export class ContactFormHandler {
       this.submitBtn.classList.remove('opacity-75', 'cursor-not-allowed');
       this.submitBtn.classList.add('bg-emerald-600', 'hover:bg-emerald-700');
       this.submitBtn.classList.remove('bg-purple-600', 'hover:bg-purple-700');
-      if (btnText) btnText.innerText = 'Dados Transmitidos!';
+      if (btnText) btnText.innerText = 'Solicitação Enviada com Sucesso!';
       if (btnIcon) {
         btnIcon.innerText = 'check_circle';
         btnIcon.classList.remove('animate-spin');
@@ -152,14 +152,14 @@ export class ContactFormHandler {
       setTimeout(() => {
         this.submitBtn.classList.remove('bg-emerald-600', 'hover:bg-emerald-700');
         this.submitBtn.classList.add('bg-purple-600', 'hover:bg-purple-700');
-        if (btnText) btnText.innerText = 'Transmitir Dados';
+        if (btnText) btnText.innerText = 'Solicitar Análise Técnica';
         if (btnIcon) btnIcon.innerText = 'send';
       }, 3000);
     } else if (state === 'error') {
       this.submitBtn.disabled = false;
       this.submitBtn.classList.remove('opacity-75', 'cursor-not-allowed');
       this.submitBtn.classList.add('bg-red-600', 'hover:bg-red-700');
-      if (btnText) btnText.innerText = 'Falha na Transmissão';
+      if (btnText) btnText.innerText = 'Falha ao enviar';
       if (btnIcon) {
         btnIcon.innerText = 'error';
         btnIcon.classList.remove('animate-spin');
