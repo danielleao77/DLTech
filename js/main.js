@@ -1,6 +1,6 @@
 import { NavigationManager } from './navigation.js';
 import { ScrollAnimationTrigger } from './scroll-animation.js';
-import { ContactFormHandler } from './contact-form.js';
+import { ContactFormHandler } from './contact-form.js?v=1.0.2';
 import { ImageLightbox } from './lightbox.js';
 
 document.addEventListener('DOMContentLoaded', () => {

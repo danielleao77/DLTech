@@ -133,9 +133,10 @@ export class ContactFormHandler {
     if (!isValid) return;
 
     this.setSubmitState('loading');
+    const protocol = this.generateProtocol();
+    console.log('Iniciando envio para Web3Forms. Protocolo gerado:', protocol);
 
     try {
-      const protocol = this.generateProtocol();
       const formData = new FormData(this.form);
       formData.append("protocolo", protocol);
 
@@ -145,8 +146,10 @@ export class ContactFormHandler {
       });
 
       const data = await response.json();
+      console.log('Resposta do Web3Forms:', data);
 
-      if (response.ok && data.success) {
+      if (response.ok && (data.success === true || data.success === 'true')) {
+        console.log('Envio bem-sucedido. Abrindo modal do protocolo:', protocol);
         this.setSubmitState('success');
         this.form.reset();
         this.resetChips();
@@ -156,7 +159,7 @@ export class ContactFormHandler {
       }
     } catch (err) {
       this.setSubmitState('error');
-      console.error(err);
+      console.error('Erro detalhado no envio:', err);
     }
   }
 
