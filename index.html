@@ -279,15 +279,26 @@
                 <!-- Bento Grid Layout -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[320px]">
                     <!-- Bento item 1: Criando com Jesus -->
-                    <a href="portfolio.html" class="md:col-span-2 md:row-span-2 group relative rounded-lg border border-slate-800 overflow-hidden bg-slate-900/50 reveal-on-scroll block">
-                        <img alt="Mockup do portal Criando com Jesus" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-85" src="images/criando-com-jesus.png"/>
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
-                        <div class="absolute bottom-0 left-0 p-8 w-full">
-                            <span class="text-purple-400 text-xs font-bold uppercase tracking-widest mb-2 block">Plataforma de E-commerce & Ensino</span>
-                            <h3 class="text-2xl md:text-3xl font-bold text-white mb-2">Criando com Jesus</h3>
-                            <p class="text-slate-400 text-sm max-w-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                Plataforma digital de e-commerce e educação familiar cristã. Desenvolvida sob medida para carregamento ultra rápido, segurança e checkout fluido.
-                            </p>
+                    <a href="portfolio.html" class="md:col-span-2 md:row-span-2 group relative rounded-lg border border-slate-800 overflow-hidden bg-slate-900/50 reveal-on-scroll flex flex-col justify-between p-6 hover:border-purple-500/50 transition-all duration-300">
+                        <div class="rounded-lg border border-slate-800 bg-slate-950/80 overflow-hidden flex-1 flex flex-col min-h-0">
+                            <!-- Browser Header -->
+                            <div class="bg-slate-900/80 px-4 py-2.5 border-b border-slate-800 flex items-center gap-1.5 shrink-0">
+                                <span class="w-2 h-2 rounded-full bg-red-500/80"></span>
+                                <span class="w-2 h-2 rounded-full bg-yellow-500/80"></span>
+                                <span class="w-2 h-2 rounded-full bg-green-500/80"></span>
+                                <div class="bg-slate-950/60 rounded px-3 py-0.5 text-[10px] text-slate-500 font-mono ml-4 w-48 truncate">criandocomjesus.com.br</div>
+                            </div>
+                            <!-- Image container -->
+                            <div class="flex-1 overflow-hidden relative">
+                                <img alt="Portal Criando com Jesus" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03] opacity-70 group-hover:opacity-90" src="images/criando-com-jesus.png"/>
+                            </div>
+                        </div>
+                        <div class="mt-4 flex justify-between items-end">
+                            <div>
+                                <span class="text-purple-400 text-xs font-bold uppercase tracking-widest mb-1 block">Plataforma de E-commerce & Ensino</span>
+                                <h3 class="text-2xl font-bold text-white">Criando com Jesus</h3>
+                            </div>
+                            <span class="material-symbols-outlined text-slate-500 group-hover:text-purple-400 transition-colors">arrow_right_alt</span>
                         </div>
                     </a>                    
                     <!-- Bento item 2: Text/Link callout project (Aura Sync) -->
