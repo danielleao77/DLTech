@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html class="dark scroll-smooth" lang="pt-BR">
+
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>DL Tech — Sites que vendem. Interfaces que cativam.</title>
-    <meta name="description" content="Desenvolvemos sites institucionais, e-commerces e sistemas web de altíssimo desempenho. Código 100% sob medida e sem a lentidão do WordPress.">
-    <meta name="keywords" content="Software Agency, Web Development, Design Engineering, React, Node.js, Tailwind CSS, Dark Mode, UI/UX">
+    <meta name="description"
+        content="Desenvolvemos sites institucionais, e-commerces e sistemas web de altíssimo desempenho. Código 100% sob medida e sem a lentidão do WordPress.">
+    <meta name="keywords"
+        content="Software Agency, Web Development, Design Engineering, React, Node.js, Tailwind CSS, Dark Mode, UI/UX">
     <meta name="author" content="DL Tech">
-    
+
     <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://dltech.site/">
     <meta property="og:title" content="DL Tech — Sites que vendem. Interfaces que cativam.">
-    <meta property="og:description" content="Desenvolvemos sites institucionais, e-commerces e sistemas web de altíssimo desempenho. Código 100% sob medida e sem a lentidão do WordPress.">
+    <meta property="og:description"
+        content="Desenvolvemos sites institucionais, e-commerces e sistemas web de altíssimo desempenho. Código 100% sob medida e sem a lentidão do WordPress.">
     <meta property="og:image" content="https://dltech.site/images/dltech-preview.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://dltech.site/">
     <meta property="twitter:title" content="DL Tech — Sites que vendem. Interfaces que cativam.">
-    <meta property="twitter:description" content="Desenvolvemos sites institucionais, e-commerces e sistemas web de altíssimo desempenho. Código 100% sob medida e sem a lentidão do WordPress.">
+    <meta property="twitter:description"
+        content="Desenvolvemos sites institucionais, e-commerces e sistemas web de altíssimo desempenho. Código 100% sob medida e sem a lentidão do WordPress.">
     <meta property="twitter:image" content="https://dltech.site/images/dltech-preview.png">
-    
+
     <!-- Tailwind CSS & Plugins -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script id="tailwind-config">
@@ -38,39 +43,50 @@
             }
         }
     </script>
-    
+
     <!-- Google Fonts & Material Symbols -->
-    <link href="https://fonts.googleapis.com" rel="preconnect"/>
-    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-    
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+
     <!-- Custom Style Sheet -->
-    <link href="css/style.css" rel="stylesheet"/>
+    <link href="css/style.css" rel="stylesheet" />
 </head>
+
 <body class="bg-slate-950 text-slate-100 antialiased selection:bg-purple-600 selection:text-white">
 
     <!-- Header Navigation -->
-    <header class="fixed top-0 w-full z-50 transition-all duration-300 border-b border-transparent bg-transparent py-4 px-6 md:px-12 flex justify-between items-center" id="main-nav">
+    <header
+        class="fixed top-0 w-full z-50 transition-all duration-300 border-b border-transparent bg-transparent py-4 px-6 md:px-12 flex justify-between items-center"
+        id="main-nav">
         <div class="flex items-center gap-2 text-xl font-bold tracking-tighter text-white">
-            <span class="material-symbols-outlined text-purple-400" style="font-variation-settings: 'FILL' 1;">terminal</span>
+            <span class="material-symbols-outlined text-purple-400"
+                style="font-variation-settings: 'FILL' 1;">terminal</span>
             <span>DL TECH</span>
         </div>
-        
+
         <nav class="hidden md:flex gap-8 items-center">
-            <a class="text-slate-400 hover:text-purple-400 transition-colors text-sm font-medium" href="#services">Serviços</a>
-            <a class="text-slate-400 hover:text-purple-400 transition-colors text-sm font-medium" href="#work">Portfólio</a>
-            <a class="text-slate-400 hover:text-purple-400 transition-colors text-sm font-medium" href="#contact">Contato</a>
+            <a class="text-slate-400 hover:text-purple-400 transition-colors text-sm font-medium"
+                href="#services">Serviços</a>
+            <a class="text-slate-400 hover:text-purple-400 transition-colors text-sm font-medium"
+                href="#work">Portfólio</a>
+            <a class="text-slate-400 hover:text-purple-400 transition-colors text-sm font-medium"
+                href="#contact">Contato</a>
         </nav>
-        
+
         <div class="hidden md:block">
-            <a href="#contact" class="px-5 py-2.5 bg-slate-900/50 hover:bg-slate-800 border border-slate-800 hover:border-purple-500/50 text-white rounded text-sm font-medium transition-all duration-300">
+            <a href="#contact"
+                class="px-5 py-2.5 bg-slate-900/50 hover:bg-slate-800 border border-slate-800 hover:border-purple-500/50 text-white rounded text-sm font-medium transition-all duration-300">
                 Iniciar Sequência
             </a>
         </div>
-        
+
         <!-- Burger Menu Button -->
-        <button class="md:hidden flex flex-col gap-1.5 justify-center items-center w-8 h-8 rounded border border-slate-800 bg-slate-900/30 p-1" id="mobile-menu-btn" aria-label="Abrir Menu">
+        <button
+            class="md:hidden flex flex-col gap-1.5 justify-center items-center w-8 h-8 rounded border border-slate-800 bg-slate-900/30 p-1"
+            id="mobile-menu-btn" aria-label="Abrir Menu">
             <span class="w-5 h-0.5 bg-white transition-all duration-300"></span>
             <span class="w-5 h-0.5 bg-white transition-all duration-300"></span>
             <span class="w-5 h-0.5 bg-white transition-all duration-300"></span>
@@ -78,159 +94,211 @@
     </header>
 
     <!-- Mobile Navigation Fullscreen Overlay -->
-    <div class="fixed inset-0 bg-slate-950/95 backdrop-blur-lg z-40 hidden flex flex-col justify-center items-center gap-8" id="mobile-nav-overlay">
-        <a class="text-2xl text-slate-400 hover:text-purple-400 transition-colors font-medium" href="#services">Serviços</a>
-        <a class="text-2xl text-slate-400 hover:text-purple-400 transition-colors font-medium" href="#work">Portfólio</a>
-        <a class="text-2xl text-slate-400 hover:text-purple-400 transition-colors font-medium" href="#contact">Contato</a>
-        <a class="mt-4 px-8 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-full text-lg font-medium transition-all" href="#contact">
+    <div class="fixed inset-0 bg-slate-950/95 backdrop-blur-lg z-40 hidden flex flex-col justify-center items-center gap-8"
+        id="mobile-nav-overlay">
+        <a class="text-2xl text-slate-400 hover:text-purple-400 transition-colors font-medium"
+            href="#services">Serviços</a>
+        <a class="text-2xl text-slate-400 hover:text-purple-400 transition-colors font-medium"
+            href="#work">Portfólio</a>
+        <a class="text-2xl text-slate-400 hover:text-purple-400 transition-colors font-medium"
+            href="#contact">Contato</a>
+        <a class="mt-4 px-8 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-full text-lg font-medium transition-all"
+            href="#contact">
             Iniciar Sequência
         </a>
     </div>
 
     <!-- Main Content -->
     <main>
-        
+
         <!-- Hero Section -->
         <section class="relative min-h-screen flex items-center pt-28 pb-16 overflow-hidden" id="home">
             <!-- Neon background glows -->
-            <div class="absolute top-1/4 right-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-[120px] pointer-events-none animate-pulse-glow"></div>
-            <div class="absolute bottom-1/4 left-1/4 w-96 h-96 bg-emerald-500/5 rounded-full blur-[120px] pointer-events-none animate-pulse-glow" style="animation-delay: 2s;"></div>
-            
-            <div class="w-full max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-16 items-center relative z-10">
+            <div
+                class="absolute top-1/4 right-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-[120px] pointer-events-none animate-pulse-glow">
+            </div>
+            <div class="absolute bottom-1/4 left-1/4 w-96 h-96 bg-emerald-500/5 rounded-full blur-[120px] pointer-events-none animate-pulse-glow"
+                style="animation-delay: 2s;"></div>
+
+            <div
+                class="w-full max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-16 items-center relative z-10">
                 <!-- Left column: Text & Badges -->
                 <div class="flex flex-col gap-6 text-center md:text-left items-center md:items-start">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-slate-800 bg-slate-900/60 text-xs font-medium text-purple-400 w-max reveal-on-scroll">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-slate-800 bg-slate-900/60 text-xs font-medium text-purple-400 w-max reveal-on-scroll">
                         <span class="w-2 h-2 rounded-full bg-purple-400 animate-pulse"></span>
                         Sistema Online
                     </div>
-                    
+
                     <!-- Desktop title -->
-                    <h1 class="hidden md:block text-5xl lg:text-6xl font-extrabold tracking-tighter leading-[1.1] text-white reveal-on-scroll">
-                        Sites que vendem. <br/>
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-emerald-400">Interfaces que cativam.</span>
+                    <h1
+                        class="hidden md:block text-5xl lg:text-6xl font-extrabold tracking-tighter leading-[1.1] text-white reveal-on-scroll">
+                        Sites que vendem. <br />
+                        <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-emerald-400">Interfaces
+                            que cativam.</span>
                     </h1>
-                    
+
                     <!-- Mobile optimized title -->
-                    <h1 class="block md:hidden text-4xl sm:text-5xl font-extrabold tracking-tighter leading-[1.1] text-white reveal-on-scroll">
-                        Sites que vendem. <br/>
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-emerald-400">Interfaces que cativam.</span>
+                    <h1
+                        class="block md:hidden text-4xl sm:text-5xl font-extrabold tracking-tighter leading-[1.1] text-white reveal-on-scroll">
+                        Sites que vendem. <br />
+                        <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-emerald-400">Interfaces
+                            que cativam.</span>
                     </h1>
-                    
+
                     <p class="text-slate-400 text-base md:text-lg max-w-md leading-relaxed reveal-on-scroll">
-                        Não criamos apenas páginas bonitas. Desenvolvemos ecossistemas digitais estrategicamente pensados para engajar seu público e acelerar o crescimento do seu negócio.
+                        Não criamos apenas páginas bonitas. Desenvolvemos ecossistemas digitais estrategicamente
+                        pensados para engajar seu público e acelerar o crescimento do seu negócio.
                     </p>
-                    
+
                     <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mt-4 reveal-on-scroll">
-                        <a class="px-8 py-4 bg-purple-600 text-white rounded font-medium hover:bg-purple-700 transition-all text-center duration-300 shadow-lg shadow-purple-600/20 hover:shadow-purple-600/40 active:scale-95" href="#contact">
+                        <a class="px-8 py-4 bg-purple-600 text-white rounded font-medium hover:bg-purple-700 transition-all text-center duration-300 shadow-lg shadow-purple-600/20 hover:shadow-purple-600/40 active:scale-95"
+                            href="#contact">
                             Orçar Projeto
                         </a>
-                        <a class="px-8 py-4 bg-transparent text-white border border-slate-800 hover:border-slate-700 hover:bg-slate-900/50 rounded font-medium transition-all text-center duration-300 active:scale-95" href="#work">
+                        <a class="px-8 py-4 bg-transparent text-white border border-slate-800 hover:border-slate-700 hover:bg-slate-900/50 rounded font-medium transition-all text-center duration-300 active:scale-95"
+                            href="#work">
                             Cases de Sucesso
                         </a>
                     </div>
                 </div>
-                
+
                 <!-- Right column: Interactive abstract 3D spheres -->
                 <div class="relative h-[400px] md:h-[500px] w-full flex items-center justify-center reveal-on-scroll">
-                    <div class="absolute w-72 h-72 rounded-full bg-slate-900/40 border border-slate-800/80 backdrop-blur-2xl flex items-center justify-center animate-float-1 shadow-2xl shadow-purple-500/5">
+                    <div
+                        class="absolute w-72 h-72 rounded-full bg-slate-900/40 border border-slate-800/80 backdrop-blur-2xl flex items-center justify-center animate-float-1 shadow-2xl shadow-purple-500/5">
                         <!-- Nested orbital structure -->
-                        <div class="w-56 h-56 rounded-full border border-purple-500/20 flex items-center justify-center relative">
+                        <div
+                            class="w-56 h-56 rounded-full border border-purple-500/20 flex items-center justify-center relative">
                             <div class="absolute w-4 h-4 rounded-full bg-purple-400 top-4 left-4 animate-ping"></div>
-                            <div class="w-36 h-36 rounded-full border border-emerald-500/20 flex items-center justify-center">
-                                <div class="w-16 h-16 rounded-full bg-gradient-to-br from-purple-600 to-emerald-500 opacity-60 filter blur-md"></div>
+                            <div
+                                class="w-36 h-36 rounded-full border border-emerald-500/20 flex items-center justify-center">
+                                <div
+                                    class="w-16 h-16 rounded-full bg-gradient-to-br from-purple-600 to-emerald-500 opacity-60 filter blur-md">
+                                </div>
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Satellite spheres -->
-                    <div class="absolute w-24 h-24 rounded-full bg-slate-800/60 border border-slate-700/80 backdrop-blur-xl animate-float-2 top-10 right-10 flex items-center justify-center shadow-xl">
+                    <div
+                        class="absolute w-24 h-24 rounded-full bg-slate-800/60 border border-slate-700/80 backdrop-blur-xl animate-float-2 top-10 right-10 flex items-center justify-center shadow-xl">
                         <div class="w-8 h-8 rounded-full bg-purple-500/20 border border-purple-400/40"></div>
                     </div>
-                    <div class="absolute w-16 h-16 rounded-full bg-slate-900/80 border border-slate-800/90 backdrop-blur-xl animate-float-1 bottom-12 left-12 flex items-center justify-center shadow-lg">
+                    <div
+                        class="absolute w-16 h-16 rounded-full bg-slate-900/80 border border-slate-800/90 backdrop-blur-xl animate-float-1 bottom-12 left-12 flex items-center justify-center shadow-lg">
                         <div class="w-4 h-4 rounded-full bg-emerald-400"></div>
                     </div>
                 </div>
             </div>
         </section>
-        
+
         <!-- Differentiation Banner -->
         <section class="py-16 bg-slate-950 border-t border-slate-900 overflow-hidden relative">
-            <div class="absolute -left-16 top-1/2 -translate-y-1/2 w-64 h-64 bg-emerald-500/5 rounded-full blur-[100px] pointer-events-none"></div>
+            <div
+                class="absolute -left-16 top-1/2 -translate-y-1/2 w-64 h-64 bg-emerald-500/5 rounded-full blur-[100px] pointer-events-none">
+            </div>
             <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-                <div class="bg-slate-900/40 border border-slate-800/80 backdrop-blur-md rounded-2xl p-8 md:p-12 flex flex-col lg:flex-row justify-between items-center gap-8 reveal-on-scroll">
+                <div
+                    class="bg-slate-900/40 border border-slate-800/80 backdrop-blur-md rounded-2xl p-8 md:p-12 flex flex-col lg:flex-row justify-between items-center gap-8 reveal-on-scroll">
                     <div class="max-w-2xl text-center lg:text-left">
-                        <h3 class="text-2xl md:text-3xl font-extrabold text-white mb-4">Sua marca não cabe em um template pronto.</h3>
+                        <h3 class="text-2xl md:text-3xl font-extrabold text-white mb-4">Sua marca não cabe em um
+                            template pronto.</h3>
                         <p class="text-slate-400 text-sm md:text-base leading-relaxed">
-                            Desenvolvemos código 100% puro e sob medida. Sem a lentidão, as vulnerabilidades e as limitações de construtores genéricos (como WordPress e Elementor). Garantimos performance de elite com carregamento instantâneo.
+                            Desenvolvemos código 100% puro e sob medida. Sem a lentidão, as vulnerabilidades e as
+                            limitações de construtores genéricos (como WordPress e Elementor). Garantimos performance de
+                            elite com carregamento instantâneo.
                         </p>
                     </div>
-                    <div class="flex items-center gap-3 bg-purple-650/10 border border-purple-500/20 rounded-full px-5 py-2.5 text-purple-300 text-sm font-semibold whitespace-nowrap">
+                    <div
+                        class="flex items-center gap-3 bg-purple-650/10 border border-purple-500/20 rounded-full px-5 py-2.5 text-purple-300 text-sm font-semibold whitespace-nowrap">
                         <span class="w-2.5 h-2.5 rounded-full bg-purple-400 animate-ping"></span>
                         Código 100% Puro
                     </div>
                 </div>
             </div>
         </section>
-        
+
         <!-- Core Modules Section -->
         <section class="py-24 md:py-32 border-t border-slate-900 bg-slate-950/40" id="services">
             <div class="max-w-7xl mx-auto px-6 md:px-12">
                 <div class="mb-16 text-center md:text-left reveal-on-scroll">
-                    <h2 class="text-3xl md:text-4xl font-bold tracking-tighter text-white mb-4">Módulos Principais</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold tracking-tighter text-white mb-4">Nossos Serviços</h2>
                     <p class="text-slate-400 max-w-2xl text-base md:text-lg">
-                        Arquitetando soluções escaláveis em toda a stack da web moderna.
+                        Desenvolvimento web personalizado e escalável. Especialistas em e-commerce, SEO técnico, alta
+                        performance e arquitetura de sistemas robustos.
                     </p>
                 </div>
-                
+
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    
+
                     <!-- Card 1: E-commerce de Alta Performance -->
                     <div class="group obsidian-card rounded-lg p-8 md:p-10 reveal-on-scroll">
                         <span class="material-symbols-outlined text-4xl text-purple-400 mb-6 block">shopping_bag</span>
                         <h3 class="text-xl md:text-2xl font-bold text-white mb-3">E-commerce de Alta Performance</h3>
                         <p class="text-slate-400 leading-relaxed mb-6">
-                            Desenvolvimento de lojas virtuais do zero focadas em conversão extrema e velocidade de carregamento. Sistemas de checkout fluidos e bancos de dados otimizados para vendas rápidas.
+                            Desenvolvimento de lojas virtuais do zero focadas em conversão extrema e velocidade de
+                            carregamento. Sistemas de checkout fluidos e bancos de dados otimizados para vendas rápidas.
                         </p>
                         <div class="flex gap-2 flex-wrap">
-                            <span class="px-2.5 py-1 text-xs bg-slate-900/60 border border-slate-800 rounded text-slate-400">PHP</span>
-                            <span class="px-2.5 py-1 text-xs bg-slate-900/60 border border-slate-800 rounded text-slate-400">MariaDB</span>
-                            <span class="px-2.5 py-1 text-xs bg-slate-900/60 border border-slate-800 rounded text-slate-400">Checkout Customizado</span>
-                            <span class="px-2.5 py-1 text-xs bg-slate-900/60 border border-slate-800 rounded text-slate-400">Tailwind CSS</span>
+                            <span
+                                class="px-2.5 py-1 text-xs bg-slate-900/60 border border-slate-800 rounded text-slate-400">PHP</span>
+                            <span
+                                class="px-2.5 py-1 text-xs bg-slate-900/60 border border-slate-800 rounded text-slate-400">Banco
+                                de Dados</span>
+                            <span
+                                class="px-2.5 py-1 text-xs bg-slate-900/60 border border-slate-800 rounded text-slate-400">Checkout
+                                Customizado</span>
+                            <span
+                                class="px-2.5 py-1 text-xs bg-slate-900/60 border border-slate-800 rounded text-slate-400">Tailwind
+                                CSS</span>
                         </div>
                     </div>
-                    
-                    <!-- Card 2: Sistemas Web & APIs Customizadas -->
+
+                    <!-- Card 2: Sites de Alta Performance -->
+                    <div class="group obsidian-card rounded-lg p-8 md:p-10 reveal-on-scroll">
+                        <!-- <span class="material-symbols-outlined text-4xl text-purple-400 mb-6 block">shopping_bag</span> -->
+                        <span class="material-symbols-outlined">web</span>
+                        <h3 class="text-xl md:text-2xl font-bold text-white mb-3">Sites de Alta Performance</h3>
+                        <p class="text-slate-400 leading-relaxed mb-6">
+                            Desenvolvimento de Websites institucionais do zero focadas em velocidade de carregamento.
+                        </p>
+                        <div class="flex gap-2 flex-wrap">
+                            <span
+                                class="px-2.5 py-1 text-xs bg-slate-900/60 border border-slate-800 rounded text-slate-400">PHP</span>
+                            <span
+                                class="px-2.5 py-1 text-xs bg-slate-900/60 border border-slate-800 rounded text-slate-400">Banco
+                                de Dados</span>
+                            <span
+                                class="px-2.5 py-1 text-xs bg-slate-900/60 border border-slate-800 rounded text-slate-400">Checkout
+                                Customizado</span>
+                            <span
+                                class="px-2.5 py-1 text-xs bg-slate-900/60 border border-slate-800 rounded text-slate-400">Tailwind
+                                CSS</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Sistemas Web -->
                     <div class="group obsidian-card rounded-lg p-8 md:p-10 reveal-on-scroll">
                         <span class="material-symbols-outlined text-4xl text-purple-400 mb-6 block">dns</span>
-                        <h3 class="text-xl md:text-2xl font-bold text-white mb-3">Sistemas Web & APIs Customizadas</h3>
+                        <h3 class="text-xl md:text-2xl font-bold text-white mb-3">Sistemas Web Personalizados</h3>
                         <p class="text-slate-400 leading-relaxed mb-6">
-                            Aplicações web completas e seguras sob medida para as suas regras de negócio. Painéis administrativos dinâmicos e integrações de APIs estruturadas com arquiteturas limpas.
+                            Aplicações web completas e seguras sob medida para as suas regras de negócio. Painéis
+                            administrativos dinâmicos e integrações de APIs estruturadas com arquiteturas limpas.
                         </p>
                         <div class="flex gap-2 flex-wrap">
-                            <span class="px-2.5 py-1 text-xs bg-slate-900/60 border border-slate-800 rounded text-slate-400">PHP</span>
-                            <span class="px-2.5 py-1 text-xs bg-slate-900/60 border border-slate-800 rounded text-slate-400">MariaDB</span>
-                            <span class="px-2.5 py-1 text-xs bg-slate-900/60 border border-slate-800 rounded text-slate-400">Vanilla JS</span>
-                            <span class="px-2.5 py-1 text-xs bg-slate-900/60 border border-slate-800 rounded text-slate-400">OOP</span>
+                            <span
+                                class="px-2.5 py-1 text-xs bg-slate-900/60 border border-slate-800 rounded text-slate-400">PHP</span>
+                            <span
+                                class="px-2.5 py-1 text-xs bg-slate-900/60 border border-slate-800 rounded text-slate-400">Banco
+                                de Dados</span>
                         </div>
                     </div>
-                    
-                    <!-- Card 3: Otimização de Performance & Segurança -->
-                    <div class="group obsidian-card rounded-lg p-8 md:p-10 reveal-on-scroll">
-                        <span class="material-symbols-outlined text-4xl text-purple-400 mb-6 block">speed</span>
-                        <h3 class="text-xl md:text-2xl font-bold text-white mb-3">Performance & Otimização de Sistemas</h3>
-                        <p class="text-slate-400 leading-relaxed mb-6">
-                            Auditorias de performance e segurança para acelerar aplicações lentas. Otimização profunda de consultas em bancos de dados SQL e estratégias avançadas de cache.
-                        </p>
-                        <div class="flex gap-2 flex-wrap">
-                            <span class="px-2.5 py-1 text-xs bg-slate-900/60 border border-slate-800 rounded text-slate-400">Core Web Vitals</span>
-                            <span class="px-2.5 py-1 text-xs bg-slate-900/60 border border-slate-800 rounded text-slate-400">Otimização SQL</span>
-                            <span class="px-2.5 py-1 text-xs bg-slate-900/60 border border-slate-800 rounded text-slate-400">Segurança</span>
-                            <span class="px-2.5 py-1 text-xs bg-slate-900/60 border border-slate-800 rounded text-slate-400">Caching</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Card 4: Engenharia de UI/UX (Web Design de Elite) -->
-                    <div class="group obsidian-card rounded-lg p-8 md:p-10 reveal-on-scroll">
+
+                    <!-- Card X: Engenharia de UI/UX (Web Design de Elite) -->
+                    <!--<div class="group obsidian-card rounded-lg p-8 md:p-10 reveal-on-scroll">
                         <span class="material-symbols-outlined text-4xl text-purple-400 mb-6 block">design_services</span>
                         <h3 class="text-xl md:text-2xl font-bold text-white mb-3">Design de Interfaces de Elite</h3>
                         <p class="text-slate-400 leading-relaxed mb-6">
@@ -242,10 +310,10 @@
                             <span class="px-2.5 py-1 text-xs bg-slate-900/60 border border-slate-800 rounded text-slate-400">UI/UX</span>
                             <span class="px-2.5 py-1 text-xs bg-slate-900/60 border border-slate-800 rounded text-slate-400">Acessibilidade</span>
                         </div>
-                    </div>
-                    
-                    <!-- Card 5: Automação de Infraestrutura & Ansible -->
-                    <div class="group obsidian-card rounded-lg p-8 md:p-10 reveal-on-scroll">
+                    </div> -->
+
+                    <!-- Card X: Automação de Infraestrutura & Ansible -->
+                    <!-- <div class="group obsidian-card rounded-lg p-8 md:p-10 reveal-on-scroll">
                         <span class="material-symbols-outlined text-4xl text-purple-400 mb-6 block">terminal</span>
                         <h3 class="text-xl md:text-2xl font-bold text-white mb-3">Automação de Infraestrutura</h3>
                         <p class="text-slate-400 leading-relaxed mb-6">
@@ -257,10 +325,10 @@
                             <span class="px-2.5 py-1 text-xs bg-slate-900/60 border border-slate-800 rounded text-slate-400">Orquestração</span>
                             <span class="px-2.5 py-1 text-xs bg-slate-900/60 border border-slate-800 rounded text-slate-400">DevOps</span>
                         </div>
-                    </div>
-                    
-                    <!-- Card 6: Monitoramento & Observabilidade (Zabbix) -->
-                    <div class="group obsidian-card rounded-lg p-8 md:p-10 reveal-on-scroll">
+                    </div> -->
+
+                    <!-- Card X: Monitoramento & Observabilidade (Zabbix) -->
+                    <!--<div class="group obsidian-card rounded-lg p-8 md:p-10 reveal-on-scroll">
                         <span class="material-symbols-outlined text-4xl text-purple-400 mb-6 block">monitoring</span>
                         <h3 class="text-xl md:text-2xl font-bold text-white mb-3">Monitoramento & Observabilidade</h3>
                         <p class="text-slate-400 leading-relaxed mb-6">
@@ -272,73 +340,95 @@
                             <span class="px-2.5 py-1 text-xs bg-slate-900/60 border border-slate-800 rounded text-slate-400">Grafana</span>
                             <span class="px-2.5 py-1 text-xs bg-slate-900/60 border border-slate-800 rounded text-slate-400">Telemetria</span>
                         </div>
-                    </div>
-                    
+                    </div> -->
+
                 </div>
             </div>
         </section>
-        
+
         <!-- Selected Work Section -->
         <section class="py-24 md:py-32 border-t border-slate-900" id="work">
             <div class="max-w-7xl mx-auto px-6 md:px-12">
                 <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6 reveal-on-scroll">
                     <div>
-                        <h2 class="text-3xl md:text-4xl font-bold tracking-tighter text-white mb-4">Trabalhos Selecionados</h2>
+                        <h2 class="text-3xl md:text-4xl font-bold tracking-tighter text-white mb-4">Trabalhos
+                            Selecionados</h2>
                         <p class="text-slate-400 max-w-xl text-base md:text-lg">
                             Recentes deploys de infraestruturas web e estudos de caso de arquitetura.
                         </p>
                     </div>
                 </div>
-                
+
                 <!-- Bento Grid Layout -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[320px]">
                     <!-- Bento item 1: Criando com Jesus -->
-                    <a href="portfolio.html" class="md:col-span-2 md:row-span-2 group relative rounded-lg border border-slate-800 overflow-hidden bg-slate-900/50 reveal-on-scroll flex flex-col justify-between p-6 hover:border-purple-500/50 transition-all duration-300">
-                        <div class="rounded-lg border border-slate-800 bg-slate-950/80 overflow-hidden flex-1 flex flex-col min-h-0">
+                    <a href="portfolio.html"
+                        class="md:col-span-2 md:row-span-2 group relative rounded-lg border border-slate-800 overflow-hidden bg-slate-900/50 reveal-on-scroll flex flex-col justify-between p-6 hover:border-purple-500/50 transition-all duration-300">
+                        <div
+                            class="rounded-lg border border-slate-800 bg-slate-950/80 overflow-hidden flex-1 flex flex-col min-h-0">
                             <!-- Browser Header -->
-                            <div class="bg-slate-900/80 px-4 py-2.5 border-b border-slate-800 flex items-center gap-1.5 shrink-0">
+                            <div
+                                class="bg-slate-900/80 px-4 py-2.5 border-b border-slate-800 flex items-center gap-1.5 shrink-0">
                                 <span class="w-2 h-2 rounded-full bg-red-500/80"></span>
                                 <span class="w-2 h-2 rounded-full bg-yellow-500/80"></span>
                                 <span class="w-2 h-2 rounded-full bg-green-500/80"></span>
-                                <div class="bg-slate-950/60 rounded px-3 py-0.5 text-[10px] text-slate-500 font-mono ml-4 w-48 truncate">criandocomjesus.com.br</div>
+                                <div
+                                    class="bg-slate-950/60 rounded px-3 py-0.5 text-[10px] text-slate-500 font-mono ml-4 w-48 truncate">
+                                    criandocomjesus.com.br</div>
                             </div>
                             <!-- Image container -->
                             <div class="flex-1 overflow-hidden relative">
-                                <img alt="Portal Criando com Jesus" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03] opacity-70 group-hover:opacity-90" src="images/criando-com-jesus.png"/>
+                                <img alt="Portal Criando com Jesus"
+                                    class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03] opacity-70 group-hover:opacity-90"
+                                    src="images/criando-com-jesus.png" />
                             </div>
                         </div>
                         <div class="mt-4 flex justify-between items-end">
                             <div>
-                                <span class="text-purple-400 text-xs font-bold uppercase tracking-widest mb-1 block">Plataforma de E-commerce & Ensino</span>
+                                <span
+                                    class="text-purple-400 text-xs font-bold uppercase tracking-widest mb-1 block">Plataforma
+                                    de E-commerce & Ensino</span>
                                 <h3 class="text-2xl font-bold text-white">Criando com Jesus</h3>
                             </div>
-                            <span class="material-symbols-outlined text-slate-500 group-hover:text-purple-400 transition-colors">arrow_right_alt</span>
+                            <span
+                                class="material-symbols-outlined text-slate-500 group-hover:text-purple-400 transition-colors">arrow_right_alt</span>
                         </div>
-                    </a>                    
+                    </a>
                     <!-- Bento item 2: Text/Link callout project (Aura Sync) -->
-                    <div class="group relative rounded-lg border border-slate-800 overflow-hidden bg-slate-900/30 p-8 flex flex-col justify-between reveal-on-scroll">
-                        <div class="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div
+                        class="group relative rounded-lg border border-slate-800 overflow-hidden bg-slate-900/30 p-8 flex flex-col justify-between reveal-on-scroll">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        </div>
                         <div class="flex justify-between items-start">
                             <span class="material-symbols-outlined text-4xl text-emerald-400">sync_alt</span>
-                            <span class="material-symbols-outlined text-slate-500 group-hover:text-purple-400 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300">arrow_outward</span>
+                            <span
+                                class="material-symbols-outlined text-slate-500 group-hover:text-purple-400 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300">arrow_outward</span>
                         </div>
                         <div>
-                            <span class="text-emerald-400 text-xs font-bold uppercase tracking-widest mb-1 block">API Gateway</span>
+                            <span class="text-emerald-400 text-xs font-bold uppercase tracking-widest mb-1 block">API
+                                Gateway</span>
                             <h3 class="text-xl font-bold text-white">Aura Sync</h3>
                             <p class="text-slate-400 text-sm mt-2">
                                 Gateway de microsserviços distribuído com latência abaixo de 10ms.
                             </p>
                         </div>
                     </div>
-                    
+
                     <!-- Bento item 3: Visual abstract code block (Metrics Void) -->
-                    <div class="group relative rounded-lg border border-slate-800 overflow-hidden bg-slate-900/50 reveal-on-scroll">
-                        <img alt="Abstração de dados e código" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-40 group-hover:opacity-75" src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80"/>
+                    <div
+                        class="group relative rounded-lg border border-slate-800 overflow-hidden bg-slate-900/50 reveal-on-scroll">
+                        <img alt="Abstração de dados e código"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-40 group-hover:opacity-75"
+                            src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80" />
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 to-transparent"></div>
                         <div class="absolute bottom-0 left-0 p-6 z-10">
-                            <span class="text-purple-400 text-xs font-bold uppercase tracking-widest mb-1 block">Visualização de Dados</span>
+                            <span
+                                class="text-purple-400 text-xs font-bold uppercase tracking-widest mb-1 block">Visualização
+                                de Dados</span>
                             <h3 class="text-xl font-bold text-white">Metrics Void</h3>
-                            <p class="text-slate-300 text-xs mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <p
+                                class="text-slate-300 text-xs mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 Painel conceitual de fluxo de dados de servidores globais.
                             </p>
                         </div>
@@ -346,20 +436,21 @@
                 </div>
             </div>
         </section>
-        
+
         <!-- Contact Section -->
         <section class="py-24 md:py-32 bg-slate-950 border-t border-slate-900" id="contact">
             <div class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
-                
+
                 <!-- Text info -->
                 <div class="flex flex-col justify-center reveal-on-scroll">
                     <h2 class="text-4xl md:text-5xl font-bold tracking-tighter text-white mb-6">
-                        Vamos projetar<br/>o seu crescimento.
+                        Vamos projetar<br />o seu crescimento.
                     </h2>
                     <p class="text-slate-400 text-base md:text-lg mb-12">
-                        Envie os requisitos do seu projeto. Nossa equipe técnica fará uma análise de viabilidade e retornará com uma proposta personalizada em até 24 horas.
+                        Envie os requisitos do seu projeto. Nossa equipe técnica fará uma análise de viabilidade e
+                        retornará com uma proposta personalizada em até 24 horas.
                     </p>
-                    
+
                     <div class="space-y-6 border-l-2 border-slate-800 pl-6">
                         <div>
                             <h4 class="text-white font-bold mb-1">Base Central</h4>
@@ -378,62 +469,83 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Contact Form Card -->
-                <div class="bg-slate-900/50 border border-slate-800 rounded-lg p-8 relative backdrop-blur-md reveal-on-scroll">
-                    <div class="absolute -top-px left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent"></div>
-                    
+                <div
+                    class="bg-slate-900/50 border border-slate-800 rounded-lg p-8 relative backdrop-blur-md reveal-on-scroll">
+                    <div
+                        class="absolute -top-px left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent">
+                    </div>
+
                     <form class="space-y-6" id="contact-form">
                         <input type="hidden" name="access_key" value="bc2f2025-aab9-4503-ac62-01041fb24a71">
                         <input type="hidden" name="project_type" id="project-type-input" value="">
-                        
+
                         <!-- Floating Label inputs -->
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <div class="floating-label-group">
-                                <input class="w-full bg-transparent border-b border-slate-800 py-3 text-white focus:border-purple-500 focus:ring-0 focus:outline-none transition-colors duration-300" placeholder=" " type="text" id="user-name" name="name" required/>
+                                <input
+                                    class="w-full bg-transparent border-b border-slate-800 py-3 text-white focus:border-purple-500 focus:ring-0 focus:outline-none transition-colors duration-300"
+                                    placeholder=" " type="text" id="user-name" name="name" required />
                                 <label class="text-slate-400" for="user-name">Seu Nome ou Empresa</label>
                             </div>
                             <div class="floating-label-group">
-                                <input class="w-full bg-transparent border-b border-slate-800 py-3 text-white focus:border-purple-500 focus:ring-0 focus:outline-none transition-colors duration-300" placeholder=" " type="email" id="user-email" name="email" required/>
+                                <input
+                                    class="w-full bg-transparent border-b border-slate-800 py-3 text-white focus:border-purple-500 focus:ring-0 focus:outline-none transition-colors duration-300"
+                                    placeholder=" " type="email" id="user-email" name="email" required />
                                 <label class="text-slate-400" for="user-email">Seu E-mail</label>
                             </div>
                         </div>
-                        
+
                         <div class="floating-label-group">
-                            <textarea class="w-full bg-transparent border-b border-slate-800 py-3 text-white focus:border-purple-500 focus:ring-0 focus:outline-none transition-colors duration-300 resize-none" placeholder=" " rows="3" id="user-message" name="message" required></textarea>
-                            <label class="text-slate-400" for="user-message">Descreva seu projeto ou desafio técnico</label>
+                            <textarea
+                                class="w-full bg-transparent border-b border-slate-800 py-3 text-white focus:border-purple-500 focus:ring-0 focus:outline-none transition-colors duration-300 resize-none"
+                                placeholder=" " rows="3" id="user-message" name="message" required></textarea>
+                            <label class="text-slate-400" for="user-message">Descreva seu projeto ou desafio
+                                técnico</label>
                         </div>
-                        
+
                         <!-- Interactive project type chips -->
                         <div class="space-y-3">
-                            <label class="text-xs font-semibold text-slate-400 uppercase tracking-wider block">Tipo de Projeto</label>
+                            <label class="text-xs font-semibold text-slate-400 uppercase tracking-wider block">Tipo de
+                                Projeto</label>
                             <div class="flex flex-wrap gap-3">
-                                <button type="button" class="project-chip px-4 py-2 text-xs font-medium rounded-full border border-slate-800 bg-slate-900/50 text-slate-400 hover:border-slate-700 transition-all duration-300" data-value="Institucional">
+                                <button type="button"
+                                    class="project-chip px-4 py-2 text-xs font-medium rounded-full border border-slate-800 bg-slate-900/50 text-slate-400 hover:border-slate-700 transition-all duration-300"
+                                    data-value="Institucional">
                                     Institucional
                                 </button>
-                                <button type="button" class="project-chip px-4 py-2 text-xs font-medium rounded-full border border-slate-800 bg-slate-900/50 text-slate-400 hover:border-slate-700 transition-all duration-300" data-value="E-commerce">
+                                <button type="button"
+                                    class="project-chip px-4 py-2 text-xs font-medium rounded-full border border-slate-800 bg-slate-900/50 text-slate-400 hover:border-slate-700 transition-all duration-300"
+                                    data-value="E-commerce">
                                     E-commerce
                                 </button>
-                                <button type="button" class="project-chip px-4 py-2 text-xs font-medium rounded-full border border-slate-800 bg-slate-900/50 text-slate-400 hover:border-slate-700 transition-all duration-300" data-value="Sistema Sob Medida">
+                                <button type="button"
+                                    class="project-chip px-4 py-2 text-xs font-medium rounded-full border border-slate-800 bg-slate-900/50 text-slate-400 hover:border-slate-700 transition-all duration-300"
+                                    data-value="Sistema Sob Medida">
                                     Sistema Sob Medida
                                 </button>
                             </div>
                         </div>
-                        
+
                         <!-- Submit button with loading state support -->
-                        <button class="w-full bg-purple-600 hover:bg-purple-700 text-white py-4 rounded font-bold transition-all duration-300 flex justify-center items-center gap-2 group/btn shadow-lg shadow-purple-600/10 hover:shadow-purple-600/30" type="submit" id="submit-btn">
+                        <button
+                            class="w-full bg-purple-600 hover:bg-purple-700 text-white py-4 rounded font-bold transition-all duration-300 flex justify-center items-center gap-2 group/btn shadow-lg shadow-purple-600/10 hover:shadow-purple-600/30"
+                            type="submit" id="submit-btn">
                             <span class="btn-text">Solicitar Análise Técnica</span>
-                            <span class="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform">send</span>
+                            <span
+                                class="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform">send</span>
                         </button>
                     </form>
                 </div>
             </div>
         </section>
-        
+
     </main>
 
     <!-- Footer -->
-    <footer class="bg-slate-950 border-t border-slate-900 py-12 px-6 md:px-12 w-full max-w-7xl mx-auto z-10 relative flex flex-col md:flex-row justify-between items-center gap-6">
+    <footer
+        class="bg-slate-950 border-t border-slate-900 py-12 px-6 md:px-12 w-full max-w-7xl mx-auto z-10 relative flex flex-col md:flex-row justify-between items-center gap-6">
         <div class="text-sm text-slate-500 font-medium text-center md:text-left">
             © 2026 DL Tech. Todos os direitos reservados.
         </div>
@@ -445,55 +557,71 @@
     </footer>
 
     <!-- Fixed Mobile Navigation Bottom Bar -->
-    <nav class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex justify-around items-center p-2 bg-slate-900/90 backdrop-blur-xl border border-slate-850 shadow-2xl shadow-purple-500/10 w-[90%] max-w-md rounded-full md:hidden">
-        <a class="flex flex-col items-center justify-center text-purple-400 rounded-full px-5 py-2 active:scale-90 duration-200" href="#home">
+    <nav
+        class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex justify-around items-center p-2 bg-slate-900/90 backdrop-blur-xl border border-slate-850 shadow-2xl shadow-purple-500/10 w-[90%] max-w-md rounded-full md:hidden">
+        <a class="flex flex-col items-center justify-center text-purple-400 rounded-full px-5 py-2 active:scale-90 duration-200"
+            href="#home">
             <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
             <span class="font-medium text-[10px] mt-0.5">Home</span>
         </a>
-        <a class="flex flex-col items-center justify-center text-slate-400 px-5 py-2 hover:text-purple-400 transition-all active:scale-90 duration-200" href="#services">
+        <a class="flex flex-col items-center justify-center text-slate-400 px-5 py-2 hover:text-purple-400 transition-all active:scale-90 duration-200"
+            href="#services">
             <span class="material-symbols-outlined">layers</span>
             <span class="font-medium text-[10px] mt-0.5">Serviços</span>
         </a>
-        <a class="flex flex-col items-center justify-center text-slate-400 px-5 py-2 hover:text-purple-400 transition-all active:scale-90 duration-200" href="#work">
+        <a class="flex flex-col items-center justify-center text-slate-400 px-5 py-2 hover:text-purple-400 transition-all active:scale-90 duration-200"
+            href="#work">
             <span class="material-symbols-outlined">grid_view</span>
             <span class="font-medium text-[10px] mt-0.5">Trabalhos</span>
         </a>
-        <a class="flex flex-col items-center justify-center text-slate-400 px-5 py-2 hover:text-purple-400 transition-all active:scale-90 duration-200" href="#contact">
+        <a class="flex flex-col items-center justify-center text-slate-400 px-5 py-2 hover:text-purple-400 transition-all active:scale-90 duration-200"
+            href="#contact">
             <span class="material-symbols-outlined">mail</span>
             <span class="font-medium text-[10px] mt-0.5">Contato</span>
         </a>
     </nav>
 
     <!-- Protocol Success Modal -->
-    <div id="protocol-modal" class="fixed inset-0 z-50 flex items-center justify-center p-6 bg-slate-950/80 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300">
-        <div class="bg-slate-900/90 border border-slate-800 rounded-lg p-8 max-w-md w-full relative backdrop-blur-xl shadow-2xl shadow-purple-500/10 scale-95 transition-all duration-300" id="protocol-modal-card">
-            <div class="absolute -top-px left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent"></div>
-            
+    <div id="protocol-modal"
+        class="fixed inset-0 z-50 flex items-center justify-center p-6 bg-slate-950/80 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-slate-900/90 border border-slate-800 rounded-lg p-8 max-w-md w-full relative backdrop-blur-xl shadow-2xl shadow-purple-500/10 scale-95 transition-all duration-300"
+            id="protocol-modal-card">
+            <div
+                class="absolute -top-px left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent">
+            </div>
+
             <div class="flex flex-col items-center text-center">
                 <!-- Glowing success circle -->
-                <div class="w-16 h-16 rounded-full bg-purple-600/10 border border-purple-500/30 flex items-center justify-center mb-6 shadow-lg shadow-purple-500/20">
+                <div
+                    class="w-16 h-16 rounded-full bg-purple-600/10 border border-purple-500/30 flex items-center justify-center mb-6 shadow-lg shadow-purple-500/20">
                     <span class="material-symbols-outlined text-purple-400 text-3xl">task_alt</span>
                 </div>
-                
+
                 <h3 class="text-2xl font-bold text-white mb-2">Solicitação Registrada</h3>
                 <p class="text-slate-400 text-sm mb-6">
-                    Sua proposta foi associada a um número de protocolo exclusivo. Nossa equipe fará a análise de viabilidade técnica e entrará em contato em até 24 horas.
+                    Sua proposta foi associada a um número de protocolo exclusivo. Nossa equipe fará a análise de
+                    viabilidade técnica e entrará em contato em até 24 horas.
                 </p>
-                
+
                 <!-- Protocol Display Box -->
-                <div class="w-full bg-slate-950/50 border border-slate-850 rounded p-4 flex items-center justify-between gap-4 mb-8">
+                <div
+                    class="w-full bg-slate-950/50 border border-slate-850 rounded p-4 flex items-center justify-between gap-4 mb-8">
                     <div class="text-left">
-                        <span class="text-[10px] font-bold text-slate-500 uppercase tracking-wider block">Código do Protocolo</span>
-                        <span id="protocol-number" class="text-white font-mono text-base font-semibold tracking-wider">DL-2026-XXXXXX</span>
+                        <span class="text-[10px] font-bold text-slate-500 uppercase tracking-wider block">Código do
+                            Protocolo</span>
+                        <span id="protocol-number"
+                            class="text-white font-mono text-base font-semibold tracking-wider">DL-2026-XXXXXX</span>
                     </div>
-                    <button id="copy-protocol-btn" class="px-3 py-2 bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-purple-400 border border-slate-800 hover:border-purple-500/30 rounded text-xs font-semibold flex items-center gap-1.5 transition-all duration-300 active:scale-95">
+                    <button id="copy-protocol-btn"
+                        class="px-3 py-2 bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-purple-400 border border-slate-800 hover:border-purple-500/30 rounded text-xs font-semibold flex items-center gap-1.5 transition-all duration-300 active:scale-95">
                         <span class="material-symbols-outlined text-sm">content_copy</span>
                         <span id="copy-btn-text">Copiar</span>
                     </button>
                 </div>
-                
+
                 <!-- Close Button -->
-                <button id="close-protocol-modal" class="w-full py-3.5 bg-slate-900/50 hover:bg-slate-800 border border-slate-800 hover:border-purple-500/50 text-white rounded font-bold text-sm transition-all duration-300">
+                <button id="close-protocol-modal"
+                    class="w-full py-3.5 bg-slate-900/50 hover:bg-slate-800 border border-slate-800 hover:border-purple-500/50 text-white rounded font-bold text-sm transition-all duration-300">
                     Fechar Painel
                 </button>
             </div>
@@ -503,4 +631,5 @@
     <!-- Main Module script -->
     <script type="module" src="js/main.js?v=1.0.2"></script>
 </body>
+
 </html>
