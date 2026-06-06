@@ -21,7 +21,6 @@ export class NavigationManager {
     // Scroll events
     window.addEventListener('scroll', () => {
       this.handleHeaderScroll();
-      this.highlightActiveSection();
     });
 
     // Mobile menu toggle
@@ -34,9 +33,11 @@ export class NavigationManager {
       link.addEventListener('click', (e) => this.handleLinkClick(e));
     });
 
-    // Initial triggers
+    // Initial trigger for header styling
     this.handleHeaderScroll();
-    this.highlightActiveSection();
+    
+    // Set up IntersectionObserver to handle active navigation highlighting
+    this.setupIntersectionObserver();
   }
 
   handleHeaderScroll() {
@@ -114,23 +115,38 @@ export class NavigationManager {
     }
   }
 
-  highlightActiveSection() {
-    const scrollPosition = window.scrollY + window.innerHeight / 3;
+  setupIntersectionObserver() {
+    if (!('IntersectionObserver' in window)) return;
+
+    const observerOptions = {
+      root: null,
+      rootMargin: '-30% 0px -60% 0px',
+      threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const sectionId = entry.target.getAttribute('id');
+          this.updateActiveNavLink(sectionId);
+        }
+      });
+    }, observerOptions);
 
     this.sections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
-      const sectionId = section.getAttribute('id');
+      observer.observe(section);
+    });
+  }
 
-      if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-        this.navLinks.forEach(link => {
-          link.classList.remove('text-purple-400');
-          link.classList.add('text-slate-400');
-          if (link.getAttribute('href') === `#${sectionId}`) {
-            link.classList.add('text-purple-400');
-            link.classList.remove('text-slate-400');
-          }
-        });
+  updateActiveNavLink(activeSectionId) {
+    this.navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (href === `#${activeSectionId}` || href.endsWith(`#${activeSectionId}`)) {
+        link.classList.add('text-purple-400');
+        link.classList.remove('text-slate-400');
+      } else if (href.startsWith('#') || href.includes('#')) {
+        link.classList.remove('text-purple-400');
+        link.classList.add('text-slate-400');
       }
     });
   }
