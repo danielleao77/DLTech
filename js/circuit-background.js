@@ -78,11 +78,13 @@ export class CircuitBackground {
     const w = this.canvas.width;
     const h = this.canvas.height;
     
-    // CPU central square location (shifted higher up near the header)
+    const isMobile = w < 768;
+    
+    // CPU central square location (shifted higher up near the header, even higher on mobile)
     this.chip = {
       cx: w / 2,
-      cy: Math.max(150, Math.min(h * 0.20, 190)),
-      size: Math.max(160, Math.min(w * 0.20, 220)) // Adaptive size
+      cy: isMobile ? 95 : Math.max(150, Math.min(h * 0.20, 190)),
+      size: isMobile ? 110 : Math.max(160, Math.min(w * 0.20, 220)) // Adaptive size
     };
 
     const cx = this.chip.cx;
