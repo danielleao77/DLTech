@@ -83,7 +83,7 @@ export class CircuitBackground {
     // CPU central square location (shifted higher up near the header, even higher on mobile)
     this.chip = {
       cx: w / 2,
-      cy: isMobile ? 95 : Math.max(150, Math.min(h * 0.20, 190)),
+      cy: isMobile ? 75 : Math.max(150, Math.min(h * 0.20, 190)),
       size: isMobile ? 110 : Math.max(160, Math.min(w * 0.20, 220)) // Adaptive size
     };
 
